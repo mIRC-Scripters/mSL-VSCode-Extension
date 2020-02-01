@@ -99,7 +99,94 @@
               "name": "entity.name.function.msl"
             }
           },
-          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=\\}$)"
+          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=\\}$)",
+          "patterns": [
+            {
+              "include": "#code_content"
+            }
+          ]
+        }
+      ]
+    },
+    "code_content": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#variables"
+        },
+        {
+          "include": "#conditionals"
+        },
+        {
+          "include": "#code_block"
+        }
+      ]
+    },
+    "code_block": {
+      "patterns": [
+        {
+          "name": "meta.code.block.msl",
+          "begin": "{",
+          "end": "}",
+          "patterns": [
+            {
+              "include": "#code_content"
+            }
+          ]
+        }
+      ]
+    },
+    "conditionals": {
+      "patterns": [
+        {
+          "comment": "Matches conditionals: if elseif while",
+          "name": "meta.conditional.msl",
+          "begin": "(?i)(?:(?<=\\G|\\x20\\|\\x20|^)\\x20*(if|elseif|while)|(?:(?<=\\))\\x20+(&&|\\|\\|)))\\x20+(?=\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.conditional.msl"
+            },
+            "2": {
+              "name": "keyword.control.conditional.msl"
+            },
+            "3": {
+              "name": "punctuation.bracket.round.begin.msl"
+            }
+          },
+          "end": "(\\))(?=\\x20|$)",
+          "patterns": [
+            {
+              "include": "#parameters"
+            }
+          ]
+        },
+        {
+          "comment": "Matches conditional: else",
+          "name": "keyword.control.conditional.msl",
+          "match": "(?i)(?<=\\x20\\|\\x20|^)\\x20*(else)\\b(?=\\x20)"
+        }
+      ]
+    },
+    "parameters": {
+      "patterns": [
+        {
+          "include": "#variables"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "comment": "Matches regular variables, %variable",
+          "name": "variable.other.normal.msl",
+          "match": "(?<![^(,\\x20])(%)[^\\x20),]+"
+        },
+        {
+          "comment": "Matches binary variables, &variable",
+          "name": "variable.other.binary.msl",
+          "match": "(?<![^(,\\x20])(&)[^\\x20),]+"
         }
       ]
     }
