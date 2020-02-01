@@ -24,6 +24,16 @@
 					"mIRC Scripting Language",
 					"mSL"
 				]
+			},
+			{
+				"id": "msl2",
+				"extensions": [
+					".msl"
+				],
+				"aliases": [
+					"mIRC Scripting Language Commands",
+					"mSL"
+				]
 			}
 		],
 		"grammars": [
@@ -31,6 +41,11 @@
 				"language": "msl",
 				"scopeName": "source.msl",
 				"path": "./syntaxes/msl.tmLanguage.json"
+			},
+			{
+				"language": "msl2",
+				"scopeName": "source.msl",
+				"path": "./syntaxes/mslc.tmLanguage.json"
 			}
 		],
 		"commands": [

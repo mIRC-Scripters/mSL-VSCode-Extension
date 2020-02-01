@@ -1,0 +1,260 @@
+{
+  "scopeName": "source.msl",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#group"
+    },
+    {
+      "include": "#alias"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "include": "#comment_documentation"
+        },
+        {
+          "include": "#comment_block"
+        },
+        {
+          "include": "#comment_line"
+        }
+      ]
+    },
+    "comment_documentation": {
+      "patterns": [
+        {
+          "comment": "Matches a documentation multi-line comment block.",
+          "name": "comment.block.documentation.msl",
+          "begin": "^(?:\\x20*)(\\/\\*\\*)$",
+          "end": "^(?:\\x20*)\\*\\/$",
+          "patterns": [
+            {
+              "include": "#documentation_block"
+            }
+          ]
+        }
+      ]
+    },
+    "documentation_block": {
+      "patterns": [
+        {
+          "comment": "Matches tags for SimpleDocumentation v1.0.0.",
+          "match": "(?i)\\x20*\\*\\x20+(@(?:author|command|const(?:ant)?|copyright|deprecated|event|example|experimental|global|identifier|ignore|license|nobadges|param(?:eter)?|arg(?:ument)?|prop|returns?|see|switch|todo|version))\\b",
+          "captures": {
+            "1": {
+              "name": "storage.type.class.msl"
+            }
+          }
+        }
+      ]
+    },
+    "comment_block": {
+      "patterns": [
+        {
+          "comment": "Matches a regular multi-line comment block.",
+          "name": "comment.block.msl",
+          "begin": "^(?:\\x20*)\\/\\*",
+          "end": "^(?:\\x20*)\\*\\/$"
+        }
+      ]
+    },
+    "comment_line": {
+      "patterns": [
+        {
+          "comment": "Matches a single line comment.",
+          "name": "comment.line.semicolon.msl",
+          "begin": "(?<=(?:\\G|\\x20\\|\\x20|^))(?:\\x20*);",
+          "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)"
+        }
+      ]
+    },
+    "group": {
+      "patterns": [
+        {
+          "comment": "Matches a group.",
+          "name": "keyword.other.groupname.msl",
+          "match": "(?i)^#[^\\s]+ (on|off|end)(?:\\b)"
+        }
+      ]
+    },
+    "alias": {
+      "patterns": [
+        {
+          "comment": "Matches alias declaration.",
+          "name": "meta.alias.code.msl",
+          "begin": "(?i)^(alias)\\x20+(?:(-l)\\x20+)?(?!-l)([^\\s]+)\\s*",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.alias.msl"
+            },
+            "2": {
+              "name": "storage.modifier.alias.msl"
+            },
+            "3": {
+              "name": "entity.name.function.msl"
+            }
+          },
+          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=\\}$)",
+          "patterns": [
+            {
+              "include": "#code_content"
+            }
+          ]
+        }
+      ]
+    },
+    "code_content": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#variables"
+        },
+        {
+          "include": "#identifiers"
+        },
+        {
+          "include": "#conditionals"
+        },
+        {
+          "include": "#code_block"
+        }
+      ]
+    },
+    "code_block": {
+      "patterns": [
+        {
+          "name": "meta.code.block.msl",
+          "begin": "{",
+          "end": "}",
+          "patterns": [
+            {
+              "include": "#code_content"
+            }
+          ]
+        }
+      ]
+    },
+    "conditionals": {
+      "patterns": [
+        {
+          "comment": "Matches conditionals: if elseif while",
+          "name": "meta.conditional.msl",
+          "begin": "(?i)(?:(?<=\\G|\\x20\\|\\x20|^)\\x20*(if|elseif|while)|(?:(?<=\\))\\x20+(&&|\\|\\|)))\\x20+(?=\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.conditional.msl"
+            },
+            "2": {
+              "name": "keyword.control.conditional.msl"
+            },
+            "3": {
+              "name": "punctuation.bracket.round.begin.msl"
+            }
+          },
+          "end": "(\\))(?=\\x20|$)",
+          "patterns": [
+            {
+              "include": "#parameters"
+            }
+          ]
+        },
+        {
+          "comment": "Matches conditional: else",
+          "name": "keyword.control.conditional.msl",
+          "match": "(?i)(?<=\\x20\\|\\x20|^)\\x20*(else)\\b(?=\\x20)"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "comment": "Matches regular variables, %variable",
+          "name": "variable.other.normal.msl",
+          "match": "(?<![^(,\\x20])(%)[^\\x20),]+"
+        },
+        {
+          "comment": "Matches binary variables, &variable",
+          "name": "variable.other.binary.msl",
+          "match": "(?<![^(,\\x20])(&)[^\\x20),]+"
+        }
+      ]
+    },
+    "parameters": {
+      "patterns": [
+        {
+          "include": "#variables"
+        },
+        {
+          "include": "#identifiers"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "include": "#identifiers_params"
+        },
+        {
+          "include": "#identifiers_no_params"
+        }
+      ]
+    },
+    "identifiers_params": {
+      "comment": "Matches identifiers that take parameters.",
+      "patterns": [
+        {
+          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin atan tan avoice",
+          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice))\\(",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.identifier.msl"
+            }
+          },
+          "end": "(?i)\\)(?:\\.([^\\s|\\)|,]+))?",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.other.identifierproperty.msl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#parameters"
+            }
+          ]
+        }
+      ]
+    },
+    "identifiers_no_params": {
+      "comment": "Matches identifiers that do not take parameters.",
+      "patterns": [
+        {
+          "comment": "Identifiers: $0 $! $* $+ $N-N $active $activecid $activewid $adate $date $address $agentname $agentstat $agentver $anick $aop $appactive $appstate $asctime $auto $avoice $away $awaymsg $awaytime",
+          "name": "keyword.other.identifier.msl",
+          "match": "\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime|auto|avoice|away(msg|time)?)(?=\\s|\\)|,)"
+        },
+        {
+          "comment": "Identifiers: $?",
+          "match": "(\\$\\$?~?\\?(?:[^\\s=]+)?)(?:(=)(\"(?:[^\"])*\"))?(?=\\s|\\)|,)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.identifier.msl"
+            },
+            "2": {
+              "name": "keyword.operator.msl"
+            },
+            "3": {
+              "name": "string.quoted.double.msl"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
