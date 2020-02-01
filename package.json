@@ -14,6 +14,25 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"languages": [
+			{
+				"id": "msl",
+				"extensions": [
+					".mrc"
+				],
+				"aliases": [
+					"mIRC Scripting Language",
+					"mSL"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "msl",
+				"scopeName": "source.msl",
+				"path": "./syntaxes/msl.tmLanguage.json"
+			}
+		],
 		"commands": [
 			{
 				"command": "extension.helloWorld",

@@ -1,0 +1,71 @@
+{
+  "scopeName": "source.msl",
+  "patterns": [
+    {
+      "include": "#comments"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "include": "#comment_documentation"
+        },
+        {
+          "include": "#comment_block"
+        },
+        {
+          "include": "#comment_line"
+        }
+      ]
+    },
+    "comment_documentation": {
+      "patterns": [
+        {
+          "comment": "Matches a documentation multi-line comment block.",
+          "name": "comment.block.documentation.msl",
+          "begin": "^(?:\\x20*)(\\/\\*\\*)$",
+          "end": "^(?:\\x20*)\\*\\/$",
+          "patterns": [
+            {
+              "include": "#documentation_block"
+            }
+          ]
+        }
+      ]
+    },
+    "documentation_block": {
+      "patterns": [
+        {
+          "comment": "Matches tags for SimpleDocumentation v1.0.0.",
+          "match": "(?i)\\x20*\\*\\x20+(@(?:author|command|const(?:ant)?|copyright|deprecated|event|example|experimental|global|identifier|ignore|license|nobadges|param(?:eter)?|arg(?:ument)?|prop|returns?|see|switch|todo|version))\\b",
+          "captures": {
+            "1": {
+              "name": "storage.type.class.msl"
+            }
+          }
+        }
+      ]
+    },
+    "comment_block": {
+      "patterns": [
+        {
+          "comment": "Matches a regular multi-line comment block.",
+          "name": "comment.block.msl",
+          "begin": "^(?:\\x20*)\\/\\*",
+          "end": "^(?:\\x20*)\\*\\/$"
+        }
+      ]
+    },
+    "comment_line": {
+      "patterns": [
+        {
+          "comment": "Matches a single line comment.",
+          "name": "comment.line.semicolon.msl",
+          "begin": "(?<=(?:\\G|\\x20\\|\\x20|^))(?:\\x20*);",
+          "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)"
+        }
+      ]
+    }
+  }
+}
