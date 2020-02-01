@@ -117,6 +117,9 @@
           "include": "#variables"
         },
         {
+          "include": "#identifiers"
+        },
+        {
           "include": "#conditionals"
         },
         {
@@ -169,13 +172,6 @@
         }
       ]
     },
-    "parameters": {
-      "patterns": [
-        {
-          "include": "#variables"
-        }
-      ]
-    },
     "variables": {
       "patterns": [
         {
@@ -187,6 +183,76 @@
           "comment": "Matches binary variables, &variable",
           "name": "variable.other.binary.msl",
           "match": "(?<![^(,\\x20])(&)[^\\x20),]+"
+        }
+      ]
+    },
+    "parameters": {
+      "patterns": [
+        {
+          "include": "#variables"
+        },
+        {
+          "include": "#identifiers"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "include": "#identifiers_params"
+        },
+        {
+          "include": "#identifiers_no_params"
+        }
+      ]
+    },
+    "identifiers_params": {
+      "comment": "Matches identifiers that take parameters.",
+      "patterns": [
+        {
+          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin",
+          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin))\\(",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.identifier.msl"
+            }
+          },
+          "end": "(?i)\\)(?:\\.([^\\s|\\)|,]+))?",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.other.identifierproperty.msl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#parameters"
+            }
+          ]
+        }
+      ]
+    },
+    "identifiers_no_params": {
+      "comment": "Matches identifiers that do not take parameters.",
+      "patterns": [
+        {
+          "comment": "Identifiers: $0 $! $* $+ $N-N $active $activecid $activewid $adate $date $address $agentname $agentstat $agentver $anick $aop $appactive $appstate $asctime",
+          "name": "keyword.other.identifier.msl",
+          "match": "\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime)(?=\\s|\\)|,)"
+        },
+        {
+          "comment": "Identifiers: $?",
+          "match": "(\\$\\$?~?\\?(?:[^\\s=]+)?)(?:(=)(\"(?:[^\"])*\"))?(?=\\s|\\)|,)",
+          "captures": {
+            "1": {
+              "name": "keyword.other.identifier.msl"
+            },
+            "2": {
+              "name": "keyword.operator.msl"
+            },
+            "3": {
+              "name": "string.quoted.double.msl"
+            }
+          }
         }
       ]
     }
