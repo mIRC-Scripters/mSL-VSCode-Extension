@@ -210,8 +210,8 @@
       "comment": "Matches identifiers that take parameters.",
       "patterns": [
         {
-          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin",
-          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin))\\(",
+          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin atan tan avoice",
+          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice))\\(",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.identifier.msl"
@@ -235,9 +235,9 @@
       "comment": "Matches identifiers that do not take parameters.",
       "patterns": [
         {
-          "comment": "Identifiers: $0 $! $* $+ $N-N $active $activecid $activewid $adate $date $address $agentname $agentstat $agentver $anick $aop $appactive $appstate $asctime",
+          "comment": "Identifiers: $0 $! $* $+ $N-N $active $activecid $activewid $adate $date $address $agentname $agentstat $agentver $anick $aop $appactive $appstate $asctime $auto $avoice $away $awaymsg $awaytime",
           "name": "keyword.other.identifier.msl",
-          "match": "\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime)(?=\\s|\\)|,)"
+          "match": "\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime|auto|avoice|away(msg|time)?)(?=\\s|\\)|,)"
         },
         {
           "comment": "Identifiers: $?",

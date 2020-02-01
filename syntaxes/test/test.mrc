@@ -65,6 +65,12 @@ alias identifiers {
   echo -a A is $asc(A) and a is $asc(a)
   echo -a $asctime
   echo -a $asin(5) - $sin(5)
-
+  echo -a In right triangle where opposite side is 3 and adjacent is 4, angle is $atan( $calc(3/4) ).deg degrees
+  echo -a $tan(30).deg is the same as $tan( $calc(30 * $pi / 180) ) except for rounding
+  echo -a $auto
+  echo -a $avoice - $avoice(0) - $avoice(*testhost.com).network
+  echo -a $away
+  echo -a $awaymsg
+  echo -a $awaytime
 }
 #group end
