@@ -6,6 +6,9 @@
     },
     {
       "include": "#group"
+    },
+    {
+      "include": "#alias"
     }
   ],
   "repository": {
@@ -76,6 +79,27 @@
           "comment": "Matches a group.",
           "name": "keyword.other.groupname.msl",
           "match": "(?i)^#[^\\s]+ (on|off|end)(?:\\b)"
+        }
+      ]
+    },
+    "alias": {
+      "patterns": [
+        {
+          "comment": "Matches alias declaration.",
+          "name": "meta.alias.code.msl",
+          "begin": "(?i)^(alias)\\x20+(?:(-l)\\x20+)?(?!-l)([^\\s]+)\\s*",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.alias.msl"
+            },
+            "2": {
+              "name": "storage.modifier.alias.msl"
+            },
+            "3": {
+              "name": "entity.name.function.msl"
+            }
+          },
+          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=\\}$)"
         }
       ]
     }
