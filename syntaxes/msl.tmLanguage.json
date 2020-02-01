@@ -3,6 +3,9 @@
   "patterns": [
     {
       "include": "#comments"
+    },
+    {
+      "include": "#group"
     }
   ],
   "repository": {
@@ -64,6 +67,15 @@
           "name": "comment.line.semicolon.msl",
           "begin": "(?<=(?:\\G|\\x20\\|\\x20|^))(?:\\x20*);",
           "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)"
+        }
+      ]
+    },
+    "group": {
+      "patterns": [
+        {
+          "comment": "Matches a group.",
+          "name": "keyword.other.groupname.msl",
+          "match": "(?i)^#[^\\s]+ (on|off|end)(?:\\b)"
         }
       ]
     }
