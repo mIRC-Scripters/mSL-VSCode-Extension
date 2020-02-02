@@ -262,8 +262,8 @@
     "commands": {
       "patterns": [
         {
-          "comment": "Matches commands: /help /helpwin /server /disconnect /join /hop /part /partall /quit /list /links /quote /raw /me /msg /action /privmsg /notice /describe /amsg /ame /query /qme /qmsg /onotice /omsg /vnotice /vmsg /sound /ctcp /dcc /wallchops /wallvoices /uwho /sockaccept /sockclose /socklist /socklisten /sockmark /sockopen /sockpause /sockread /sockrename /sockudp /sockwrite",
-          "begin": "(?i)(?:\\|\\x20+|else\\x20|^\\x20*|\\)|\\G)\\x20*(\\/+)?([!|.]{1,2})?(help(?:win)?|server|disconnect|join|hop|part|part(?:all)?|quit|list|links|raw|(?:a|q)?me|(?:a|q|o|v|priv)?msg|(?:o|v)?notice|describe|query|sound|ctcp|dcc|wall(?:chops|voices)|uwho|sock(?:accept|close|list|listen|mark|open|pause|read|rename|udp|write))(?=\\b)",
+          "comment": "Matches commands: /help /helpwin /server /disconnect /join /hop /part /partall /quit /list /links /quote /raw /me /msg /action /privmsg /notice /describe /amsg /ame /query /qme /qmsg /onotice /omsg /vnotice /vmsg /sound /ctcp /dcc /wallchops /wallvoices /uwho /sockaccept /sockclose /socklist /socklisten /sockmark /sockopen /sockpause /sockread /sockrename /sockudp /sockwrite /bread /breplace /bcopy /bset /btrunc /bunset /bwrite /comclose /comlist /comopen /comreg /dialog /did /didtok  /drawcopy /drawdot /drawfill /drawline /drawpic /drawrect /drawreplace /drawrot /drawsave /drawscroll /drawsize /drawtext",
+          "begin": "(?i)(?:\\|\\x20+|else\\x20|^\\x20*|\\)|\\G)\\x20*(\\/+)?([!|.]{1,2})?(help(?:win)?|server|disconnect|join|hop|part|part(?:all)?|quit|list|links|raw|(?:a|q)?me|(?:a|q|o|v|priv)?msg|(?:o|v)?notice|describe|query|sound|ctcp|dcc|wall(?:chops|voices)|uwho|sock(?:accept|close|list|listen|mark|open|pause|read|rename|udp|write)|b(?:read|replace|copy|set|trunc|unset|write)|com(?:close|list|open|reg)|dialog|did(?:tok)?|draw(?:copy|dot|fill|line|pic|rect|replace|rot|save|scroll|size|text))(?=\\b)",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.command.symbol.msl"

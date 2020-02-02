@@ -133,5 +133,32 @@ alias -l commands {
   sockrename mySocket newSockName
   sockudp -n test 127.0.0.1 7777 test
   sockwrite -n IRC NICK Tester $+ $rand(1,100) $crlf
+  ; Binary variables
+  bread $qt($1) 0 $file($1).size &tempFile
+  breplace &Example 101 51
+  bcopy -z &example2 1 &example 11 999
+  bset -t &Example 1 This is fun!
+  ; Com Objects
+  comclose Example
+  comlist
+  .comopen %name WScript.Shell
+  comreg example.dll
+  ; Dialog window
+  dialog -md Example1 Example1
+  did -ra Example1 2 This is a test!
+  didtok colors 1 32 red blue orange yellow
+  ; Picture windows
+  drawcopy @foo 0 0 100 100 @bar 0 0
+  drawdot @PicWin 1 1 10 10
+  drawfill @foo 0 1 10 10
+  drawline @foo 0 1 0 0 100 100
+  drawpic @foo 50 50 pic.png
+  drawrect @window 2 7 15 10 200 150
+  drawreplace @foo 1 0
+  drawrot @foo 30
+  drawsave @foo pic.jpg
+  drawscroll @foo -10 -10 0 0 100 100
+  drawsize @foo 200 200
+  drawtext -rn @mygame 0 verdana 20 30 30 the fps is: 60
   cmd +l -x xd
 }
