@@ -74,3 +74,64 @@ alias identifiers {
   echo -a $awaytime
 }
 #group end
+
+alias -l commands {
+  ; the following examples were taken from: https://en.wikichip.org/wiki/mirc/commands
+  ; Getting Started
+  help /exit
+  helpwin myhelp.chm
+  ; Server Navigation
+  server irc.irc.com -i nick anick
+  disconnect
+  join #mIRC,#help password
+  hop #Bar moving on
+  part #ChannelName See ya!
+  partall goodbye
+  quit goodbye
+  list -min 5 -max 20
+  links -n
+  raw PRIVMSG #mIRC :Hello World!
+  ; Communication
+  me brings the cookie jar
+  msg $chan moos back
+  privmsg #channel test
+  notice nick1,nick2,nick3,nick4 This message is seen by all 4 nicks
+  describe $chan moos back!
+  amsg It's snowing!
+  ame gives away cookies
+  query -n test
+  qme goodbye
+  qmsg goodbye
+  onotice #test goodbye
+  omsg goodbye
+  vnotice goodbye
+  vmsg goodbye
+  sound myfile.wav
+  ctcp #mSL VERSION
+  dcc chat test
+  dcc fserve 
+  dcc get test
+  dcc ignore on
+  dcc maxcps 2
+  dcc nick -s foo bar
+  dcc passive on
+  dcc reject 
+  dcc send -c foo file.png
+  dcc trust -r on
+  wallchops test
+  wallvoices test
+  uwho jeff jeff
+  ; Sockets
+  sockaccept $+($sockname,$ctime)
+  sockclose mySock
+  socklist -t mySock*
+  socklisten mySocket 31781
+  sockmark sock1 $regml(1)
+  sockopen -e IRC irc.freenode.org +6697
+  sockpause -r mySocket
+  sockread -f %a
+  sockrename mySocket newSockName
+  sockudp -n test 127.0.0.1 7777 test
+  sockwrite -n IRC NICK Tester $+ $rand(1,100) $crlf
+  cmd +l -x xd
+}

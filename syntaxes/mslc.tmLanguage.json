@@ -123,6 +123,9 @@
           "include": "#conditionals"
         },
         {
+          "include": "#commands"
+        },
+        {
           "include": "#code_block"
         }
       ]
@@ -253,6 +256,68 @@
               "name": "string.quoted.double.msl"
             }
           }
+        }
+      ]
+    },
+    "commands": {
+      "patterns": [
+        {
+          "comment": "Matches commands: /help /helpwin /server /disconnect /join /hop /part /partall /quit /list /links /quote /raw /me /msg /action /privmsg /notice /describe /amsg /ame /query /qme /qmsg /onotice /omsg /vnotice /vmsg /sound /ctcp /dcc /wallchops /wallvoices /uwho /sockaccept /sockclose /socklist /socklisten /sockmark /sockopen /sockpause /sockread /sockrename /sockudp /sockwrite",
+          "begin": "(?i)(?:\\|\\x20+|else\\x20|^\\x20*|\\)|\\G)\\x20*(\\/+)?([!|.]{1,2})?(help(?:win)?|server|disconnect|join|hop|part|part(?:all)?|quit|list|links|raw|(?:a|q)?me|(?:a|q|o|v|priv)?msg|(?:o|v)?notice|describe|query|sound|ctcp|dcc|wall(?:chops|voices)|uwho|sock(?:accept|close|list|listen|mark|open|pause|read|rename|udp|write))(?=\\b)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.command.symbol.msl"
+            },
+            "2": {
+              "name": "keyword.other.command.symbol.msl"
+            },
+            "3": {
+              "name": "keyword.control.command.msl"
+            }
+          },
+          "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)",
+          "patterns": [
+            {
+              "include": "#switches"
+            },
+            {
+              "include": "#parameters"
+            }
+          ]
+        },
+        {
+          "comment": "Matches possible custom commands.",
+          "name": "meta.cmd.msl",
+          "begin": "(?i)(?:\\|\\x20+|else\\x20|^\\x20*|\\)|\\G)\\x20*(\\/+)?([!|.]{1,2})?([^\\s]+)",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.commandsymbol.msl"
+            },
+            "2": {
+              "name": "keyword.other.commandsymbol.msl"
+            },
+            "3": {
+              "name": "support.function.name.msl"
+            }
+          },
+          "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)",
+          "patterns": [
+            {
+              "include": "#switches"
+            },
+            {
+              "include": "#parameters"
+            }
+          ]
+        }
+      ]
+    },
+    "switches": {
+      "patterns": [
+        {
+          "comment": "Matches - or + switches",
+          "name": "keyword.other.switch.msl",
+          "match": "(?<=\\x20)[-+][[:alnum:]]+(?=\\s)"
         }
       ]
     }
