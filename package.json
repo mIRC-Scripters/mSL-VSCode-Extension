@@ -2,7 +2,8 @@
 	"name": "msl",
 	"displayName": "mSL",
 	"description": "mIRC Scripting Language Support.",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"icon": "logo.png",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -14,6 +15,12 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configuration": {
+			"[msl]": {
+				"editor.autoIndent": true,
+				"editor.tabSize": 2
+			}
+		},
 		"languages": [
 			{
 				"id": "msl",
@@ -23,17 +30,19 @@
 				"aliases": [
 					"mIRC Scripting Language",
 					"mSL"
-				]
+				],
+				"configuration": "./language-configuration.json"
 			},
 			{
-				"id": "msl2",
+				"id": "mslc",
 				"extensions": [
 					".msl"
 				],
 				"aliases": [
 					"mIRC Scripting Language Commands",
-					"mSL"
-				]
+					"mSL Cmds"
+				],
+				"configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
@@ -43,8 +52,8 @@
 				"path": "./syntaxes/msl.tmLanguage.json"
 			},
 			{
-				"language": "msl2",
-				"scopeName": "source.msl",
+				"language": "mslc",
+				"scopeName": "source.mslc",
 				"path": "./syntaxes/mslc.tmLanguage.json"
 			}
 		],
@@ -72,5 +81,14 @@
 		"typescript": "^3.6.4",
 		"tslint": "^5.20.0",
 		"vscode-test": "^1.2.2"
-	}
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Kedyn/mSL-VSCode-Extension/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Kedyn/mSL-VSCode-Extension.git"
+	},
+	"homepage": "https://github.com/Kedyn/mSL-VSCode-Extension/blob/master/README.md"
 }

@@ -1,65 +1,37 @@
-# msl README
+# mIRC Scripting Language Support for Visual Studio Code
 
-This is the README for your extension "msl". After writing up a brief description, we recommend including the following sections.
+This is a Visual Studio Code extension that adds support for mIRC Scripting Language.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Syntax highlighting (WIP)
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+- `editor.autoIndent`: sets auto indentation for all `msl` related files to `true`
+- `editor.tabSize`: sets tab size to `2` for all `msl` related files
+
+## Acknowledgements
+
+The grammar was built based on [highlightjs-mirc](https://github.com/highlightjs/highlightjs-mirc) project, lol2k's [vscode-mirc](https://github.com/lol2k/vscode-mirc) extension and Sreject's [language-mircscript](https://github.com/SReject/language-mircscript) project.
+
+Some test/examples were taken from: <https://en.wikichip.org/wiki/mirc>
+
+![mIRC Dock Icon](logo.png)  
+[mIRC Dock Icon](https://www.deviantart.com/hatick/art/mIRC-Dock-Icon-69817801) created by [Greg "haticK" Ferro](https://www.deviantart.com/hatick), licensed under [CC BY-NC-ND 3.0](http://creativecommons.org/licenses/by-nc-nd/3.0/)
+
+## License
+
+This project is made available under the MIT License.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Commands are restrcited to one line, i.e. **\$&** is ignored.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.1.0
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release

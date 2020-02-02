@@ -1,5 +1,5 @@
 {
-  "scopeName": "source.msl",
+  "scopeName": "source.mslc",
   "patterns": [
     {
       "include": "#comments"
