@@ -75,7 +75,7 @@ alias identifiers {
   echo -a $awaytime
   ; B
   echo -a $banlist(#,0) - $banlist(#,1).by - $banlist(#,1).date - $banlist(#,1).ctime
-  echo -a $banmask returns the current user banmask in either an on ban or on unban event
+  echo -a ON *:UNBAN:#: $chr(123) msg # Oh, look! $banmask was just removed from the channel banlist. $chr(125)
   echo -a $base(123.456,10,10,6,2)
   echo -a version is $version $+ $iif($beta,. $+ $beta)
   bset -t &var 1 test wavmIRC32WAV test | echo -a space beginning pos1: $bfind(&var,1,32) / space beginning pos11: $bfind(&var,11,32) / finds string '32' instead of chr(32) $bfind(&var,1,32).text / case-sensitive: $bfind(&var, 1, $asc(W) $asc(A) $asc(V) ) / case-insensitive: $bfind(&var,1,WAV).text / case-sensitive: $bfind(&var,1,WAV).textcs / not found: $bfind(&var,1,abc).text
@@ -83,9 +83,46 @@ alias identifiers {
   var %n 10 | echo -a $base(%n,10,2,32) | echo -a $str(-,24) $+ 87654321 | echo -a $base($bitoff(%n,2),10,2,32) $base(1000,2,10)
   var %n 10 | echo -a $base(%n,10,2,32) | echo -a $str(-,24) $+ 87654321 | echo -a $base($biton(%n,3),10,2,32) $base(1110,2,10)
   echo -a $bits
-  echo -a $bnick returns the current nick in either an on ban or on unban event
+  echo -a ON *:BAN:#: $chr(123) if ($bnick) $chr(123) msg # Looks like $bnick has been banned. $chr(125) $chr(125)
   bset -ta &var 1 chlo $+ $chr(232) / $utfencode(chlo $+ $chr(232) )  | echo -a $bvar(&var,1-) // $bvar(&var,1-).text
   echo -a $bytes(317889213,b) - $bytes(10000000000,g).suf
-
+  ; C
+  echo -a $calc(3 + 5) - echo -a $calc(3 * 4 * (3 + 5))) - echo -a $calc(10 % 3)
+  echo -ag $caller
+  echo -a $iif($input(Click cancel to see the result.,nv) == $cancel,Pressed Cancel, Pressed Yes or No)
+  echo -a $cb - $cb(0)
+  echo -a ON *:SERV:!folder:msg =$nick Current Folder: $cd
+  echo -a $ceil(3.14)
+  echo -a Channel: $chan - Topic: $chan(%c).topic - Modes: $chan(%c).mode - Key: $iif($chan(%c).key,$v1,No key set)
+  echo -a $chanmodes
+  echo -a $channel(3).mode
+  echo -a $chantypes
+  echo -a $chat(1).ip - $chat(1).stamp
+  echo -a $chr(63)
+  echo -a $cid
+  echo -a ON *:TEXT:*:#:echo -a Event level triggered: $clevel
+  echo -a $click(@ban,0) - $click(@ban,$click(@ban,0)) used for example in a menu defintion within a picture window
+  echo -a $cmdbox
+  echo -a $cmdline
+  echo -a $cnick(1).color
+  echo -a $color(action) - $color(action).dd
+  echo -a $com(Locator,ConnectServer,3, dispatch* Services) - $com(Services, InstancesOf,3,string,Win32_Processor,dispatch* Instances) - $com(Instances).result
+  echo -a $comcall(WShell, cbthread, Run, 1, bstr*, $mirdirfoo.vbs, int, 1, bool, 1)
+  echo -a Total common channels: $comchan(myFriend,0) --- Is opped on $comchan(myFriend,1) $+ : $comchan(myFriend,1).op
+  echo -a $comchar
+  echo -a $comerr
+  echo -a $compact
+  echo -a $compress(versions.txt)
+  echo -a $bytes($comval(Instances, 1, AdapterRAM)).suf
+  echo -a $cos(30).deg is the same as $cos( $calc(30 * $left($pi,8) / 180) )
+  echo -a $cosh(30).deg
+  echo -a Result: $count(My string to match,str) - Result: $countcs(My string to match,t)
+  echo -a $input(The word "will" $+ $cr $+ will be on a newline)
+  echo -a abc $crc(abc,0) / ABC $crc(ABC,0)
+  echo -a $creq
+  echo -a $input(And then the word "suddenly" $+ $crlf $+ suddenly appeared on a new line!)
+  echo -a $ctime - $ctime(Thursday 2003-01-09 21:16)
+  echo -a The timer name was: $ctimer (timer name that returns is always lowercase)
+  echo -a ON *:INPUT:*:echo -a $ctrlenter
 }
 #group end
