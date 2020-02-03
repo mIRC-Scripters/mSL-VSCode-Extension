@@ -157,5 +157,18 @@ alias identifiers {
   echo -a ON *:DNS:echo -a $iif($1,$iif($dns(1).nick,$v1 has been resolved to) Hostmask: $dns(1).addr IP: $dns(1).ip,Could not resolve DNS query.)
   echo -a $iif($dqwindow & 1,enabled,not enabled)
   echo -a $duration(38711810) - echo -a $duration(64wks 1hr 16mins 50secs)
+  echo -a $ebeeps
+  echo -a $editbox(Status Window) - Selection start: $editbox(Status Window).selstart --- Selection end: $editbox(Status Window).selend
+  echo -a $email
+  echo -a $emailaddr
+  echo -a $encode(Hello there! This will be encoded using Mime.,m)
+  echo -a There are $envvar(0) environment variables, on the $envvar(username) account
+  echo -a $error
+  var %prefix_ $+ $me value | echo -a $eval($+(%,prefix_,$me),2)
+  echo -a $evalnext($!me)
+  echo -a ON *:TEXT:*:#:echo -a Event triggered: $event
+  echo -a $eventid
+  echo -a $exists(mirc.ini)
+  wcho -a ON *:EXIT:echo -a mIRC is $iif($exiting,$iif($exiting == 1,exiting,restarting),not exiting)
 }
 #group end
