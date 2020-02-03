@@ -210,8 +210,8 @@
       "comment": "Matches identifiers that take parameters.",
       "patterns": [
         {
-          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin $atan $tan $avoice $banlist $base $bfind $bindip $bitoff $biton $bvar $bytes $calc $cb $ceil $chan $channel $chat $chr $click $cnick $color $colour $com $comcall $compress $comval $cos $cosh $count $countcs $crc",
-          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice|banlist|base|bfind|bindip|bit(off|on)|bvar|bytes|calc|cb|ceil|chan(nel)?|chat|chr|click|cnick|colou?r|com(call|press|val)?|cosh?|count(cs)?|crc|ctime))\\(",
+          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin $atan $tan $avoice $banlist $base $bfind $bindip $bitoff $biton $bvar $bytes $calc $cb $ceil $chan $channel $chat $chr $click $cnick $color $colour $com $comcall $compress $comval $cos $cosh $count $countcs $crc $ctime $date $dccignore $dde $decode $decompress $deltok $dialog $did $didreg $didtok $didwm $sdir $disk $dll $dllcall $dns $duration",
+          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice|banlist|base|bfind|bindip|bit(off|on)|bvar|bytes|calc|cb|ceil|chan(nel)?|chat|chr|click|cnick|colou?r|com(call|press|val)?|cosh?|count(cs)?|crc|ctime|date|dccignore|dde|decode|decompress|deltok|dialog|did(reg|tok|wm)?|sdir|disk|dll(call)?|dns|duration))\\(",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.identifier.msl"
@@ -235,9 +235,9 @@
       "comment": "Matches identifiers that do not take parameters.",
       "patterns": [
         {
-          "comment": "Identifiers: $0 $! $* $+ $N-N $active $activecid $activewid $adate $date $address $agentname $agentstat $agentver $anick $aop $appactive $appstate $asctime $auto $avoice $away $awaymsg $awaytime $banmask $beta $bits $bnick $caller $cancel $cb $cd $chan $chanmodes $chantypes $cid $clevel $cmdbox $cmdline $comchar $comerr $compact $cr $creq $crlf $ctime $ctimer $ctrlenter",
+          "comment": "Identifiers: $0 $! $* $+ $N-N $active $activecid $activewid $adate $date $address $agentname $agentstat $agentver $anick $aop $appactive $appstate $asctime $auto $avoice $away $awaymsg $awaytime $banmask $beta $bits $bnick $caller $cancel $cb $cd $chan $chanmodes $chantypes $cid $clevel $cmdbox $cmdline $comchar $comerr $compact $cr $creq $crlf $ctime $ctimer $ctrlenter $date $day $daylight $dbuh $dbuw $dccignore $dccport $ddename $debug $devent $did $dlevel $dname $dqwindow",
           "name": "keyword.other.identifier.msl",
-          "match": "\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime|auto|avoice|away(msg|time)?|banmask|beta|bits|bnick|caller|cancel|cb|cd|chan(modes|types)?|cid|clevel|cmd(box|line)|com(char|err|pact)|cr(eq|lf)?|ctimer?|ctrlenter)(?=\\s|\\)|,)"
+          "match": "\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime|auto|avoice|away(msg|time)?|banmask|beta|bits|bnick|caller|cancel|cb|cd|chan(modes|types)?|cid|clevel|cmd(box|line)|com(char|err|pact)|cr(eq|lf)?|ctimer?|ctrlenter|date|day(light)?|dbu(h|w)|dccignore|dccport|ddename|debug|devent|did|dlevel|dqwindow)(?=\\s|\\)|,)"
         },
         {
           "comment": "Identifiers: $?",

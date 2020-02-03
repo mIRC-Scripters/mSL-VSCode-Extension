@@ -124,5 +124,38 @@ alias identifiers {
   echo -a $ctime - $ctime(Thursday 2003-01-09 21:16)
   echo -a The timer name was: $ctimer (timer name that returns is always lowercase)
   echo -a ON *:INPUT:*:echo -a $ctrlenter
+  ; D
+  echo -a $date - $date(1234567890,yyyy-mm)
+  echo -a $day
+  echo -a $daylight
+  echo -a $dbuh
+  echo -a $dbuw
+  echo -a $dccignore(0) - $dccignore(*.exe) - $dccignore($dccignore(0))
+  echo -a $dccport
+  echo -a My other mIRC is $dde(mirc, connected) to $dde(mirc, server)
+  echo -a $ddename
+  echo -a $iif($debug,$v1,None)
+  echo -a $decode(SGVsbG8gV2lraUNoaXAgdXNlciE=,m)
+  echo -a $decompress(versions.txt)
+  echo -a $deltok(a b,1,32)
+  echo -a on *:dialog:*:*:*:echo -a $devent
+  echo -a $dialog(0)
+  echo -a on *:dialog:*:*:*:echo -a $did $did($did).state
+  echo -a $didreg($dname,$did,regexp,N)
+  echo -a $didtok($dname,$did,44)
+  echo -a $didwm($dname,$did,*.exe,N)
+  ; ask SykO about supporting the following syntax:
+  ; Old- currently not in msl.tmLanguage.json-but still supported by mIRC!
+  echo -a $dir='select dir' c:\
+  ; New
+  echo -a $sdir($mircdir,"choose a folder!,Ok!)
+  echo -a $disk(0)
+  echo -a Default user level: $dlevel
+  echo -a $dll(name.dll,procname,data)
+  echo -a $dllcall(name.dll,alias,procname,data)
+  echo -a ON *DIALOG:*:init:0:echo -a $dname
+  echo -a ON *:DNS:echo -a $iif($1,$iif($dns(1).nick,$v1 has been resolved to) Hostmask: $dns(1).addr IP: $dns(1).ip,Could not resolve DNS query.)
+  echo -a $iif($dqwindow & 1,enabled,not enabled)
+  echo -a $duration(38711810) - echo -a $duration(64wks 1hr 16mins 50secs)
 }
 #group end
