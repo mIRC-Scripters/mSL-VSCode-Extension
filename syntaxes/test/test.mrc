@@ -194,5 +194,12 @@ alias identifiers {
   echo -a $fulldate
   echo -a $fullname
   echo -a $fullscreen
+  ; G
+  echo -a $get(0) - echo -a $get(3).pc
+  echo -a on *:FILESENT:*:if ($getdir($filename) == $nofile($filename)) echo -a Note: $filename was sent from the DCC GET folder for that filename.
+  echo -a $getdot(@picwin,X,Y)
+  echo -a $gettok(a-b-c-d-e,2,45) - The current month is $gettok($asctime,2,32)
+  echo -a $gmt($ctime) is the same as $asctime($calc($ctime + $timezone  ) ) - $gmt is same as $calc( $ctime + $timezone )
+  echo -a $group(0)
 }
 #group end
