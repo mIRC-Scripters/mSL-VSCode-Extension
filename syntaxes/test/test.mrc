@@ -201,5 +201,27 @@ alias identifiers {
   echo -a $gettok(a-b-c-d-e,2,45) - The current month is $gettok($asctime,2,32)
   echo -a $gmt($ctime) is the same as $asctime($calc($ctime + $timezone  ) ) - $gmt is same as $calc( $ctime + $timezone )
   echo -a $group(0)
+  ; H
+  echo -a $halted
+  echo -a The hash is $hash(test,32)
+  echo -a $height(test,verdana,15)
+  ; $hfile --> $sfile
+  hadd -m test test test | echo -a $hfind(test,test,1) | hfree test
+  hadd -m test test test | echo -a $hget(test,test) | hfree test
+  echo -a $highlight - $highlight(0)
+  echo -a $hmac(message 1,key,sha1,0)
+  hadd -m test test ok | echo -a $hmatch(test,*es*,0) | hfree test
+  echo -a ON *:HELP:#:echo -a $hnick
+  echo -a $host
+  ; 2 line scenario below
+  echo -a ON ^*:HOTLINK:*hoverme*:*:if ($1 == hoverme) return | halt
+  echo -a ON *:HOTLINK:*hoverme*:*:echo -a Hotlink: $1 - Hotlink line: $hotline
+  ; $hotlinepos --> $hotlink(word).pos $hotlink(line).pos
+  echo -a $hotlinepos
+  echo -a on *:HOTLINK:*:*:echo -a $hotlink(match)
+  echo -a $hotp($str(z,65),0,sha512,9) should be 187092660
+  ; $hregex --> $hfind
+  hadd -m test testkey testvalue | echo -a key: $hregex(test,/.*(es).*/,1) | hfree test
+  var %a 3 | var %b 4 | echo -a $hypot(%a,%b) is the same as $sqrt( $calc( %a ^2 + %b ^2 ) )
 }
 #group end
