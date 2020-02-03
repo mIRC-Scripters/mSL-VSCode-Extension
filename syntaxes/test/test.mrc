@@ -157,6 +157,7 @@ alias identifiers {
   echo -a ON *:DNS:echo -a $iif($1,$iif($dns(1).nick,$v1 has been resolved to) Hostmask: $dns(1).addr IP: $dns(1).ip,Could not resolve DNS query.)
   echo -a $iif($dqwindow & 1,enabled,not enabled)
   echo -a $duration(38711810) - echo -a $duration(64wks 1hr 16mins 50secs)
+  ; E
   echo -a $ebeeps
   echo -a $editbox(Status Window) - Selection start: $editbox(Status Window).selstart --- Selection end: $editbox(Status Window).selend
   echo -a $email
@@ -169,6 +170,29 @@ alias identifiers {
   echo -a ON *:TEXT:*:#:echo -a Event triggered: $event
   echo -a $eventid
   echo -a $exists(mirc.ini)
-  wcho -a ON *:EXIT:echo -a mIRC is $iif($exiting,$iif($exiting == 1,exiting,restarting),not exiting)
+  echo -a ON *:EXIT:echo -a mIRC is $iif($exiting,$iif($exiting == 1,exiting,restarting),not exiting)
+  ; F
+  echo -a $iif($isfile($mircexee) == $false,false,true)
+  echo -a $feof
+  echo -a $ferr
+  echo -a $fgetc(1)
+  echo -a $file($mircini).ctime
+  echo -a ON *:FILERCVD:*:echo -a Received filename: $filename $iif($nick,from $nick - ,from) Address: $address
+  echo -a previous filter result shows zero $filtered | filter -fk versions.txt noop */* - mirc * | echo -a filter found $filtered matching lines in versions.txt
+  echo -a $finddir($mircdir,script*,0)
+  echo -a $finddir($mircdir,*,0,0,echo -a $finddirn : $1-)
+  echo -a Versions.txt $iif($findfile($mircdir,versions.txt,1,1),is,isn't) in the same folder as $nopath($mircini)
+  echo -a $findfile($mircdir,*,0,0,echo -a $findfilen : $1-)
+  echo -a $findtok(one two three, two, 32) - $findtokcs(one two three twO, twO, 32)
+  echo -a echo -a $fline($chan(1),*mirc*) $flinen
+  echo -a $floor(9.318)
+  echo -a $font(0)
+  fopen test $qt($mircini) | echo -a > $fread(test) $fopen(test).pos | fclose test
+  echo -a $fromeditbox
+  echo -a $fserv(0) - $fserv(1).cd - $fserve(0) - $fserve(1).cd
+  echo -a on *:text:*:#:echo -a $fulladdress
+  echo -a $fulldate
+  echo -a $fullname
+  echo -a $fullscreen
 }
 #group end
