@@ -268,5 +268,26 @@ alias identifiers {
   ; K
   echo -a on *:KEYDOWN:@:*:echo User pressed key $keyval , keychar $keychar in $active (key repeating: $keyrpt $+ )
   echo a- on *:KICK:#:.notice $knick You were kicked from $chan by $nick for the following reason: $iif($1-,$1-,No reason given)
+  ; L
+  echo -a on *:ACTIVE:*:echo -a * Active window is now $active $+ . Previous active window was $lactive
+  echo -a $lactivecid - $lactivewid
+  echo -a $left(abcdefg, 4) - $left(abcdefg, -3)
+  echo -a $leftwin - $leftwincid - $leftwinwid
+  echo -a $len(ONE)
+  echo -a $level(*!*@mirc.com)
+  echo -a $!lf is the same as $!chr(10) : $iif($lf == $chr(10),yes,no)
+  echo -a $line($chan(1),1)
+  echo -a $lines(versions.txt)
+  echo -a $link(0)
+  echo -a $lock(tray)
+  echo -a $locked
+  echo -a $lof($mircexe)
+  echo -a $log(50) - $log10(50)
+  echo -a $logdir
+  echo -a $logstamp - $logstampfmt
+  echo -a $shortfn($mircdir) -> $longfn($shortfn($mircdir))
+  echo -a $longip(158.152.50.239) - $longip(2660774639)
+  echo -a $lower(testÕ)
+  timer $+ $rand(11111,99999) 1 1 noop | echo -a $ltimer
 }
 #group end
