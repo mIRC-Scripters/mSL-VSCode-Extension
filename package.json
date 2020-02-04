@@ -32,17 +32,6 @@
 					"mSL"
 				],
 				"configuration": "./language-configuration.json"
-			},
-			{
-				"id": "mslc",
-				"extensions": [
-					".msl"
-				],
-				"aliases": [
-					"mIRC Scripting Language Commands",
-					"mSL Cmds"
-				],
-				"configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
@@ -50,11 +39,6 @@
 				"language": "msl",
 				"scopeName": "source.msl",
 				"path": "./syntaxes/msl.tmLanguage.json"
-			},
-			{
-				"language": "mslc",
-				"scopeName": "source.mslc",
-				"path": "./syntaxes/mslc.tmLanguage.json"
 			}
 		],
 		"commands": [

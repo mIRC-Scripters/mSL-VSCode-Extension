@@ -1,36 +1,3 @@
-/**
-*
-* Documentation comment block.
-*
-* @author Kedyn Macedonio
-* @version 0.1.0
-*
-*/
-
-/*
-
-Normal multi-line comment block.
-
-*/
-
-; Simple single line comment.
-
-; Mixed single line comment.
-
-#group on
-
-alias test
-alias -l test
-alias test {
-  if () noop
-  elseif () noop
-  else noop
-  while () noop
-
-  %test
-  &test
-}
-
 alias identifiers {
   ; the following examples were taken from: https://en.wikichip.org/wiki/mirc/identifiers
   ; A
@@ -290,4 +257,3 @@ alias identifiers {
   echo -a $lower(testÕ)
   timer $+ $rand(11111,99999) 1 1 noop | echo -a $ltimer
 }
-#group end
