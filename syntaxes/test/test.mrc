@@ -223,5 +223,71 @@ alias identifiers {
   ; $hregex --> $hfind
   hadd -m test testkey testvalue | echo -a key: $hregex(test,/.*(es).*/,1) | hfree test
   var %a 3 | var %b 4 | echo -a $hypot(%a,%b) is the same as $sqrt( $calc( %a ^2 + %b ^2 ) )
+  : I
+  echo -a on *:dns:echo -a $iaddress
+  echo -a IAL is: $ial - $ial(*,0)
+  echo -a $ialchan(*,$chan,0)
+  echo -a $ibl(#,0)
+  echo -a $idle
+  echo -a $iel(#,0)
+  if (a != b) echo -a $ifmatch - $ifmatch2
+  echo -a Ignore is: $ignore - $ignore(0)
+  echo -a $iif(0,$custom1(true1),$custom2(false2)) / $v1 $v2
+  echo -a $iil(#,0)
+  echo -a $inellipse(50,50,10,10,100,100)
+  echo -a $ini($mircini,0) - $initopic($mircini,0)
+  echo -a $inmidi
+  echo -a mIRC is currently listing bans for $chan(1): $iif($chan(1).banlist == $inmode,yes,no)
+  echo -a $inmp3
+  echo -a on *:INPUT:*:echo -a $!inpaste: $inpaste
+  echo -a $inpoly(%x,%y,%a1,%a2,%b1,%b2,%c1,%c2)
+  echo -a $input(Type something for me,e)
+  echo -a $inrect(50,50,10,10,100,100)
+  echo -a $inroundrect(50,50,10,10,100,100,5,5)
+  echo -a $insong
+  echo -a $instok(one two three, four,4, 32)
+  echo -a $int(1.9)
+  echo -a $intersect(%x,%y,%x1,%y1,%x2,%y2,%x3,%y3,rr)
+  echo -a $inwave - $inwave.length
+  echo -a Currently handling a who reply for chan $chan(1): $iif($chan(1).inwho == $inwho,yes,no)
+  echo -a $ip
+  echo -a $iptype(5.6.7.8)
+  echo -a $iql(#,0)
+  echo -a $isadmin
+  echo -a $isalias(join)
+  echo -a $base(5,10,2) $isbit(5,2)
+  echo -a $isdde(mIRC)
+  echo -a $isdir($mircdir) - $isdir($mircdirtest)
+  echo -a $isfile($mircexe) - $isfile($mircdirtest.txt)
+  echo -a $isid
+  echo -a $islower(abcdefg) - $islower(abcdefG)
+  echo -a $istok(CONNECT JOIN,$event,32)
+  echo -a $istokcs(hello HELLO hEllO,hEllO,32) - $istokcs(hello HELLO HELLo,helLO,32)
+  echo -a $isupper(ABCDEFG) - $isupper(ABCDEFg)
+  echo -a $isutf(é) $isutf($utfencode(é)) $isutf(plain)
+  ; K
+  echo -a on *:KEYDOWN:@:*:echo User pressed key $keyval , keychar $keychar in $active (key repeating: $keyrpt $+ )
+  echo a- on *:KICK:#:.notice $knick You were kicked from $chan by $nick for the following reason: $iif($1-,$1-,No reason given)
+  ; L
+  echo -a on *:ACTIVE:*:echo -a * Active window is now $active $+ . Previous active window was $lactive
+  echo -a $lactivecid - $lactivewid
+  echo -a $left(abcdefg, 4) - $left(abcdefg, -3)
+  echo -a $leftwin - $leftwincid - $leftwinwid
+  echo -a $len(ONE)
+  echo -a $level(*!*@mirc.com)
+  echo -a $!lf is the same as $!chr(10) : $iif($lf == $chr(10),yes,no)
+  echo -a $line($chan(1),1)
+  echo -a $lines(versions.txt)
+  echo -a $link(0)
+  echo -a $lock(tray)
+  echo -a $locked
+  echo -a $lof($mircexe)
+  echo -a $log(50) - $log10(50)
+  echo -a $logdir
+  echo -a $logstamp - $logstampfmt
+  echo -a $shortfn($mircdir) -> $longfn($shortfn($mircdir))
+  echo -a $longip(158.152.50.239) - $longip(2660774639)
+  echo -a $lower(testÕ)
+  timer $+ $rand(11111,99999) 1 1 noop | echo -a $ltimer
 }
 #group end
