@@ -329,7 +329,7 @@
         {
           "comment": "Matches menu declaration.",
           "name": "meta.menu.code.msl",
-          "begin": "(?i)^(menu)\\x20+((?:status|channel|query|nicklist|menubar|@[^\\x20,]+)(?:,(?:status|channel|query|nicklist|menubar|@[^\\x20,]+))*)(?=\\x20+{)",
+          "begin": "(?i)^(menu)\\x20+((?:status|channel|query|nicklist|menubar|@[^\\x20,]+)(?:,(?:status|channel|query|nicklist|menubar|@[^\\x20,]+))*)\\x20+{",
           "beginCaptures": {
             "1": {
               "name": "storage.type.menu.msl"
@@ -338,7 +338,7 @@
               "name": "storage.modifier.function.msl"
             }
           },
-          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
+          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|}$",
           "patterns": [
             {
               "include": "#menu_content"
@@ -353,11 +353,26 @@
           "include": "#parameters"
         },
         {
-          "comment": "Matches menu items",
-          "begin": "(?:^\\x20*|\\G)\\x20*(?:\\.+)?(?:([^:]+)(?:\\x20*:\\x20*)|\\-)",
+          "comment": "Matches mouse sclick dclick uclick rclick lbclick leave and drop menu items",
+          "begin": "(?:^\\x20*|\\G)\\x20*(?:\\.+)?((?:mouse|(?:s|d|u|r|lb)click)|leave|drop)(?:\\x20*:\\x20*)?",
           "beginCaptures": {
             "1": {
-              "name": "string.quoted.other.title.msl"
+              "name": "keyword.other.menu.item.msl"
+            }
+          },
+          "end": "(?=\\z|\\x20}|$)",
+          "patterns": [
+            {
+              "include": "#code_content"
+            }
+          ]
+        },
+        {
+          "comment": "Matches menu items",
+          "begin": "(?:^\\x20*|\\G)\\x20*(?:\\.+)?(?:([^:]+)(?:\\x20*:\\x20*)?|\\-)",
+          "beginCaptures": {
+            "1": {
+              "name": "string.quoted.other.menu.item.msl"
             }
           },
           "end": "(?=\\z|\\x20}|$)",

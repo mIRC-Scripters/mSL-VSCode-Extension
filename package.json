@@ -84,11 +84,11 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/Kedyn/mSL-VSCode-Extension/issues"
+		"url": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Kedyn/mSL-VSCode-Extension.git"
+		"url": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension.git"
 	},
-	"homepage": "https://github.com/Kedyn/mSL-VSCode-Extension/blob/master/README.md"
+	"homepage": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension/blob/master/README.md"
 }

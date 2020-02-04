@@ -390,8 +390,6 @@ menu channel,menubar,query,status {
     .unload -rs $qt($script)
   }
 }
-}
-}
 
 alias test {
   if ($true) return
