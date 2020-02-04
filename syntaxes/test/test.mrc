@@ -265,5 +265,8 @@ alias identifiers {
   echo -a $istokcs(hello HELLO hEllO,hEllO,32) - $istokcs(hello HELLO HELLo,helLO,32)
   echo -a $isupper(ABCDEFG) - $isupper(ABCDEFg)
   echo -a $isutf(é) $isutf($utfencode(é)) $isutf(plain)
+  ; K
+  echo -a on *:KEYDOWN:@:*:echo User pressed key $keyval , keychar $keychar in $active (key repeating: $keyrpt $+ )
+  echo a- on *:KICK:#:.notice $knick You were kicked from $chan by $nick for the following reason: $iif($1-,$1-,No reason given)
 }
 #group end
