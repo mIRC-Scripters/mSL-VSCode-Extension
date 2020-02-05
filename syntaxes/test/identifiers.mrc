@@ -405,4 +405,27 @@ alias identifiers {
   echo -a Used in a menu definition: $submenu($id($1))
   echo -a $switchbar
   echo -a $sysdir(music)
+  ; T
+  echo -a There are 2x pi radians in a circle, so a radian is $calc(360 / (2*$pi) ) degrees
+  var %i 30 | echo -a $tan(%i).deg is the same as $tan( $calc(%i * $pi / 180) ) except for rounding
+  echo -a $tanh(1).deg
+  echo -a ON *:CLOSE:*:$iif(!$window(@windowWatcher),window @windowWatcher) | echo @windowWatcher Window Closed: $target $+ .
+  echo -a $tempfn
+  var %ticks = $ticks, %x = 10000 | while (%x) { dec %x } | echo -a 10,000 empty iterations took: $calc($ticks - %ticks) ms.
+  echo -a $time
+  echo -a $iif($input(test,evk1) == $timeout,timedout)
+  echo -a $timer(0)
+  echo -a $timestamp
+  echo -a $timestampfmt
+  echo -a $timezone
+  echo -a $tip(test,test,test)
+  echo -a $tips
+  echo -a $titlebar
+  echo -a $token(a-b-c-d-e,2,45) - returns b - replaced by $!gettok()
+  echo -a $toolbar - $toolbar(0)
+  echo -a $topic(#mirc) - replaced by $chan(#mirc).topic
+  echo -a $totp(Secret case-sensitive Pass Key,$ctime,sha512,9,3600)
+  echo -a $treebar
+  echo -a $iif($isfile($mircexe) == $true,true,false)
+  echo -a $trust(0)
 }
