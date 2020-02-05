@@ -192,7 +192,7 @@ alias identifiers {
   ; $hregex --> $hfind
   hadd -m test testkey testvalue | echo -a key: $hregex(test,/.*(es).*/,1) | hfree test
   var %a 3 | var %b 4 | echo -a $hypot(%a,%b) is the same as $sqrt( $calc( %a ^2 + %b ^2 ) )
-  : I
+  ; I
   echo -a on *:dns:echo -a $iaddress
   echo -a IAL is: $ial - $ial(*,0)
   echo -a $ialchan(*,$chan,0)
