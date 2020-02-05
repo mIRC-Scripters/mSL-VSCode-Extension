@@ -457,4 +457,6 @@ alias identifiers {
   echo -a $wrap($1-,verdana,10,$calc(%w - 10),1,%a)
   ; X
   echo -a $xor(21,9) - returns 28
+  ; Y
+  echo -a $iif($input(Click yes to see the result.,yv) == $yes,yes,no)
 }
