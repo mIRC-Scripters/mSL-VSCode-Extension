@@ -2,7 +2,7 @@ alias -l commands {
   ; the following examples were taken from: https://en.wikichip.org/wiki/mirc/commands
   ; Getting Started
   help /exit
-  helpwin myhelp.chm
+  winhelp myhelp.chm
   ; Server Navigation
   server irc.irc.com -i nick anick
   disconnect
