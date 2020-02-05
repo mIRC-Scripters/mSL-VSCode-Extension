@@ -459,4 +459,6 @@ alias identifiers {
   echo -a $xor(21,9) - returns 28
   ; Y
   echo -a $iif($input(Click yes to see the result.,yv) == $yes,yes,no)
+  ; Z
+  echo -a $zip(test.zip,cp,testdir\test1.txt,foo bar)
 }
