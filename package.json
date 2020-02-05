@@ -4,6 +4,7 @@
 	"description": "mIRC Scripting Language Support.",
 	"version": "0.1.0",
 	"icon": "logo.png",
+	"publisher": "mirc-scripters",
 	"engines": {
 		"vscode": "^1.41.0"
 	},
@@ -39,6 +40,12 @@
 				"language": "msl",
 				"scopeName": "source.msl",
 				"path": "./syntaxes/msl.tmLanguage.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "msl",
+				"path": "./snippets/tools.json"
 			}
 		],
 		"commands": [

@@ -29,3 +29,4 @@ This project is made available under the MIT License.
 ## Known Issues
 
 - Commands are restrcited to one line, i.e. **\$&** is ignored.
+- If/elseif/else/while must contain parentheses.
