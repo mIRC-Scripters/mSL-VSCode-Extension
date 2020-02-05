@@ -15,7 +15,7 @@
       "* ${7:@global}",
       "*",
       "*/",
-      "alias ${7:-l} ${1:myCommand} {",
+      "alias ${8:-l} ${1:myCommand} {",
       "  if (!\\$~isid) {",
       "    $0",
       "  }",
@@ -46,7 +46,7 @@
       "* ${8:@global}",
       "*",
       "*/",
-      "alias ${8:-l} ${1:myIdentifier} {",
+      "alias ${9:-l} ${1:myIdentifier} {",
       "  if (\\$~isid) {",
       "    !return $0",
       "  }",
@@ -89,7 +89,7 @@
       "* ${13:@global}",
       "*",
       "*/",
-      "alias ${13:-l} ${1:myAlias} {",
+      "alias ${14:-l} ${1:myAlias} {",
       "  if (!\\$~isid) {",
       "    ; command",
       "    $0",
@@ -114,7 +114,7 @@
       "* ${3:@global}",
       "*",
       "*/",
-      "alias ${3:-l} ${1:myConstant} return $0"
+      "alias ${4:-l} ${1:myConstant} return $0"
     ],
     "description": "Alias constant template."
   },
