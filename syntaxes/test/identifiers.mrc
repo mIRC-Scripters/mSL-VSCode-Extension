@@ -314,4 +314,19 @@ alias identifiers {
   echo -a $or(14,27) - 31
   echo -a $ord(3)
   echo -a $os
+  ; P
+  echo -a $len($1-) -- $len($parms)
+  echo -a on *:parseline:*:*:echo -a $parseline - $parsetype - $parseutf
+  echo -a $pi
+  echo -a $pic(C:\K.png)
+  echo -a $play(0)
+  echo -a $pnick
+  echo -a $portable
+  echo -a $portfree(6667)
+  echo -a The path-less filename is $mid($mircexe, $calc(1+$pos($mircexe,\, $count($mircexe,\) ) ) )
+  echo -a $poscs(DEADBEEF,E,0)
+  echo -a $prefix
+  echo -a $prop
+  echo -a $protect
+  echo -a $puttok(a-b-c-d-e-f,TEST,3,46)) - a-b-TEST-d-e-f
 }
