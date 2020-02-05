@@ -306,4 +306,12 @@ alias identifiers {
   echo -a raw *:*:echo -a $numeric
   echo -a $numtok(a-b-c-d-e,45) - $numtok(x1xxxx2x3x4x,120) - $numtok(1x2X3x4,120)
   echo -a $nvnick($chan,1)
+  ; O
+  echo -a You clicked: $iif($input(Click ok to see the result.,ov) == $ok,ok)
+  echo -a $online - $onlineserver - $onlinetotal
+  echo -a $onpoly(%n1,%n2,%x1,%y1,%xN1,%yN1,%x2,%y2,%xN2,%yN2)
+  echo -a ON *:OP:#:echo -a $opnick
+  echo -a $or(14,27) - 31
+  echo -a $ord(3)
+  echo -a $os
 }
