@@ -315,6 +315,7 @@ alias identifiers {
   echo -a $ord(3)
   echo -a $os
   ; P
+  echo -a $parm1 $parm2 $parm3 ... $parm19 - $parm100
   echo -a $len($1-) -- $len($parms)
   echo -a on *:parseline:*:*:echo -a $parseline - $parsetype - $parseutf
   echo -a $pi
