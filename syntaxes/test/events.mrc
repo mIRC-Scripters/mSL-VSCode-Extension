@@ -334,3 +334,28 @@ on *:parseline:out:PRIVMSG *Hello?:echo -a $parseline
 on *:parseline:out:PRIVMSG & ?Hello?:echo -a $parseline
 on *:parseline:out:$(PRIVMSG & :Hello?):echo -a $parseline
 on $*:parseline:out:/^PRIVMSG [^ ]+ :Hello./:echo -a $parseline
+
+
+
+raw 319:*:{
+  ; $1 = <myname>
+  ; $2 = <nick>
+  ; $3 = <[mode]#channel 1>
+  ; $4 = <[mode]#channel 2>
+  ; $5 = <[mode]#channel 3>
+  ; $6 ...
+}
+
+raw 319:*:{
+  ;We indicated that the event should trigger on the server's numeric value of 319
+  if (%whois. [ $+ [ $2 ] ]) {
+    ;In the if statement we check if we actually /whoised this user 
+    msg %whois. [ $+ [ $2 ] ] [WHOIS] $2 is on $3-.
+    unset %whois. $+ $2
+  } 
+}
+raw cap:* ack sasl *:{ }
+raw cap:* ls *:{ }
+raw authenticate:*:{ }
+ctcp *:test:?:ctcpreply $nick success
+ctcp *:version:?:ctcpreply $nick mIRC 12.5!!

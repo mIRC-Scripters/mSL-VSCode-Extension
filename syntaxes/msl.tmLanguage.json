@@ -332,7 +332,7 @@
         {
           "comment": "Matches menu declaration.",
           "name": "meta.menu.code.msl",
-          "begin": "(?i)^(menu)\\x20+((?:status|channel|query|nicklist|menubar|@[^\\x20,]+)(?:,(?:status|channel|query|nicklist|menubar|@[^\\x20,]+))*)\\x20+{",
+          "begin": "(?i)^(menu)\\x20+((?:status|channel|query|nicklist|menubar|@[^\\x20,]+)(?:,(?:status|channel|query|nicklist|menubar|@[^\\x20,]+))*|\\*)\\x20+{",
           "beginCaptures": {
             "1": {
               "name": "storage.type.menu.msl"
@@ -352,6 +352,9 @@
     },
     "menu_content": {
       "patterns": [
+        {
+          "include": "#comments"
+        },
         {
           "include": "#parameters"
         },
@@ -391,11 +394,11 @@
       "patterns": [
         {
           "comment": "Matches events: action notice text",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:action|notice|text):[^:]+:[^:]+:)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -407,11 +410,11 @@
         },
         {
           "comment": "Matches events: active input tabcomp",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:active|input|tabcomp):(?:\\*|#[^:]*|\\?|=|!|@[^:]*):)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -423,11 +426,11 @@
         },
         {
           "comment": "Matches events: agent appactive connect connectfail disconnect dns exit load unload midiend mp3end playend songend waveend nick nosound notify unotify ping pong quit start usermode",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:agent|appactive|connect(?:fail)?|disconnect|dns|exit|(?:un)?load|(?:midi|mp3|play|song|wave)end|nick|nosound|u?notify|ping|pong|quit|start|usermode):)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -439,11 +442,11 @@
         },
         {
           "comment": "Matches events: ban unban help dehelp deop serverop op deowner owner devoice voice invite join kick servermode mode part rawmode topic",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:(?:un)?ban|(?:de)?help|(?:de|server)?op|(?:de)?owner|(?:de)?voice|invite|join|kick|(?:server|raw)?mode|part|topic):(?:\\*|#[^:]*):)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -455,11 +458,11 @@
         },
         {
           "comment": "Matches events: chat ctcpreply error filercvd filesent getfail sendfail logon serv signal snotice sockclose socklisten sockopen sockread sockwrite udpread udpwrite vcmd wallops",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:chat|ctcpreply|error|file(?:rcvd|sent)|(?:get|send)fail|logon|serv|signal|snotice|sock(?:close|listen|open|read|write)|udp(?:read|write)|vcmd|wallops):[^:]+:)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -471,11 +474,11 @@
         },
         {
           "comment": "Matches events: close open",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:close|open):(?:\\*|\\?|=|!|@[^:]*):)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -487,11 +490,11 @@
         },
         {
           "comment": "Matches events: dccserver",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:dccserver:(?:chat|send|fserve):)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -503,11 +506,11 @@
         },
         {
           "comment": "Matches events: dialog",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:dialog:[^:]+:(?:init|close|edit|sclick|dclick|menu|scroll|mouse|rclick|drop|\\*):[\\d\\-,\\*]+:)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -519,11 +522,11 @@
         },
         {
           "comment": "Matches events: hotlink",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:hotlink:[^:]+:(?:\\*|#[^:]*|\\?|=|!|@[^:]*):)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -535,11 +538,11 @@
         },
         {
           "comment": "Matches events: keydown keyup",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:key(?:down|up):(?:\\*|@[^:]*):(?:\\*|\\d+(?:,\\d+)*):)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
@@ -551,11 +554,43 @@
         },
         {
           "comment": "Matches events: parseline",
-          "name": "meta.alias.code.msl",
+          "name": "meta.event.code.msl",
           "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:parseline:(?:\\*|in|out):[^:]+:)\\s*",
           "beginCaptures": {
             "1": {
-              "name": "entity.name.type.text.events.msl"
+              "name": "entity.name.type.event.msl"
+            }
+          },
+          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
+          "patterns": [
+            {
+              "include": "#code_content"
+            }
+          ]
+        },
+        {
+          "comment": "Matches events: raw",
+          "name": "meta.event.code.msl",
+          "begin": "^(?i)(raw\\x20+[^:\\s]+:[^:]+:)\\s*",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.type.event.msl"
+            }
+          },
+          "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",
+          "patterns": [
+            {
+              "include": "#code_content"
+            }
+          ]
+        },
+        {
+          "comment": "Matches events: raw",
+          "name": "meta.event.code.msl",
+          "begin": "^(?i)(ctcp\\x20+[^:\\s]+:[^:]+:(?:\\*|#.*|\\?):)\\s*",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.type.event.msl"
             }
           },
           "end": "(?i)(?=\\z|(?:^(?:on|raw|ctcp|dialog|\\#[^\\s]+|alias|menu)\\b))|(?<=}$)",

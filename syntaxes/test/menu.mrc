@@ -6,6 +6,12 @@ menu status {
   ..subitem
 }
 
+menu * {
+ Animal
+ .$submenu($animal($1))
+}
+
+
 ; The following was taken from: https://gitlab.com/Ouims/Pacman/blob/master/pacman.mrc
 menu channel,menubar,query,status {
   $iif(%pacupdate != $null,$style(2)) Pacman
