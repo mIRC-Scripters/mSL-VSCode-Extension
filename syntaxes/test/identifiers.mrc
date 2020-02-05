@@ -446,4 +446,13 @@ alias identifiers {
   echo -a $version
   ON *:VOICE:#:echo -a $vnick
   echo -a $vol(master)
+  ; W
+  echo -a $wavedir - has been replaced by $!sound(wave)
+  echo -a $wid
+  echo -a $width(test,verdana,15)
+  on *:text:*:#:echo -a $wildsite
+  echo -a $wildtok(one two three,t*e,1,32) - returns three
+  echo -a $wildtokcs(one two three twO, t*O,1,32) - returns twO
+  echo -a $window - $window(0)
+  echo -a $wrap($1-,verdana,10,$calc(%w - 10),1,%a)
 }
