@@ -455,4 +455,6 @@ alias identifiers {
   echo -a $wildtokcs(one two three twO, t*O,1,32) - returns twO
   echo -a $window - $window(0)
   echo -a $wrap($1-,verdana,10,$calc(%w - 10),1,%a)
+  ; X
+  echo -a $xor(21,9) - returns 28
 }
