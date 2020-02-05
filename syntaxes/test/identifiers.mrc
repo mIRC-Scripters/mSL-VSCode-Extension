@@ -360,4 +360,49 @@ alias identifiers {
   echo -a $right(abcdefg, 4) - defg
   echo -a $rnick($chan,0)
   echo -a $round(4.98472,3)
+  ; S
+  echo -a This returns $true $samepath( $mircexe , $nopath($mircexe) )
+  echo -a $scid(0)
+  echo -a $scon(0)
+  echo -a This is script: $script and scripts loaded: $script(0)
+  echo -a $scriptdir - $scriptline - $scriptdirTEMP\hashtable.hsh
+  echo -a $sdir($mircdir,"choose a folder!,Ok!)
+  echo -a $send(0) - $send(2).pc
+  echo -a $!server = $server - total servers for dalnet: $server(0,Dalnet)
+  echo -a $serverip
+  echo -a $servertarget
+  echo -a $sfile($mircdir,"choose a file!,Ok!)
+  echo -a $sha1($mircexe,2) - $sha256($mircexe,2) - $sha384($mircexe,2) - $sha512($mircexe,2)
+  echo -a $shortfn($longfn($mircdir))
+  echo -a show = $show
+  echo -a on *:signal:test:echo -a $signal
+  var %e 2.718281 | var %angle $calc( 30 * $pi / 180)   | echo -a $sinh(%angle) same as $calc( ((%e ^ %angle) - (%e ^ (0 - %angle) )) /2 )
+  var %angle 30 | echo -a $sinh(%angle).deg same as $sinh( $calc( %angle * $pi / 180) ) except for rounding
+  echo -a on *:text:*:#:echo -a $site
+  echo -a $sline(0)
+  echo -a $snick(0)
+  echo -a $snicks
+  echo -a $snotify
+  echo -a $sock(*,1)
+  on *:sockread:name:if ($sockerr) return | var %a |  if (!$sockbr) return | if (%a == something) echo -a ok
+  on *:sockread:*:echo -a $sockname
+  echo -a $sorttok(C a c b A B,32,a) - $sorttokcs(C a c b A B,32,a)
+  if ($insong) return $sound($insong.fname).artist
+  echo -a $speak(0)
+  echo -a $sqrt(3) is the same as $calc(3^.5)
+  echo -a $sreq
+  echo -a $ssl
+  echo -a $sslcertsha1
+  echo -a $sslcertsha256
+  if (($server) && (+* iswm $port)) echo -a current SSL connection is $iif($sslcertvalid,valid,invalid)
+  echo -a $ssldll - $ssllibdll - $sslready - $sslversion
+  echo -a on *:start:echo -s $starting
+  echo -a $status
+  echo -a $str(Yes,3)
+  echo -a on *:TEXT:*:#channelname:var %i $CheckForBadWords($strip($1-))
+  echo -a on *:text:*:#:echo -a $stripped
+  echo -a Used in a menu definition: $iif($server == $null,$style(2)) Server Info
+  echo -a Used in a menu definition: $submenu($id($1))
+  echo -a $switchbar
+  echo -a $sysdir(music)
 }
