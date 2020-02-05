@@ -438,4 +438,12 @@ alias identifiers {
   echo -a $urlget(https://github.com/solbu/Peace-and-Protection/archive/v4.22.8.zip ,gf,peace-and-protection-v4-22-8.zip,noop)
   echo -a $usermode
   echo -a $utfdecode(Ã©) - $utfencode(é)
+  ; V
+  if (a != b) echo -a $v1 - $v2
+  echo -a $var(%myscript*,0)
+  echo $vc(0) - $vcmd(0)
+  echo -a $vcmdstat - $vcmdver
+  echo -a $version
+  ON *:VOICE:#:echo -a $vnick
+  echo -a $vol(master)
 }
