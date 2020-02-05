@@ -323,7 +323,7 @@ alias identifiers {
   echo -a $pnick
   echo -a $portable
   echo -a $portfree(6667)
-  echo -a The path-less filename is $mid($mircexe, $calc(1+$pos($mircexe,\, $count($mircexe,\) ) ) )
+  echo -a The path-less filename is $mid($mircexe, $calc(1 + $pos($mircexe,\, $count($mircexe,\) ) ) )
   echo -a $poscs(DEADBEEF,E,0)
   echo -a $prefix
   echo -a $prop
@@ -332,4 +332,32 @@ alias identifiers {
   ; Q
   var %ini $qt($mircini) | echo -a %ini | echo -a $qt(%ini)
   echo -a $query(0)
+  ; R
+  echo -a Do I wish to answer that? $iif(1 == $rand(0,1),yes,no - random upper case from A through Z: $r(A,Z)
+  var %i 999999 , %t $ticks | while (%i) { noop $rands(0,999999999) | dec %i } | echo -a ms: $calc($ticks - %t)
+  echo -a on *:dns:echo -a $raddress $!raddress has been replaced by $!dns().addr
+  echo -a on *:text:*:#:echo -a RAWBYTES: $rawbytes - RAWMSG: $rawmsg
+  echo -a $read(versions.txt,nt,3)
+  echo -a $readini($mircini,n,chanfolder,n0)
+  noop $read($mircini,tnw,*mirc*) | echo -a $readn
+  ; regebr doesn't seem to return a value when used on mIRC 7.58 + crossover (macos)
+  echo -a $regbr(test,0)
+  echo -a $regex($str(a,2700),/(?<=a*)/) $regerrstr
+  echo -a $regex(abcd,/[a-z]/g) $regex(test,This is a test message,/(is|es)/g) $regml(test,0) - $regmlex(test,4,1)
+  var %a | echo -a $regsub(abcd,/[a-z]/g,1,%a)
+  var %a | echo -a $regsubex(abcd,/([a-z])/g,-\n \1-)
+  if ($remote & 1) echo -a ctcps are enabled
+  if ($remote & 2) echo -a events are enabled
+  if ($remote & 4) echo -a raws are enabled
+  echo -a $remove($getdir,$mircdir) - $remove(aAabcdaaA,a) - $removecs(aAabcdaaA,a)
+  echo -a $remtok(one two three, two, 32) - one three - $remtokcs(one two three twO, twO, 32) - one two three
+  echo -a $replace(Abcdabcd, a,b, a,c ) - bbcdbbcd - $replacex(1234, 1,2, 2,3, 3,4 ) - 2344
+  echo -a $replacex(abc,ab,c,cc,d) vs $replace(abc,ab,c,cc,d)
+  echo -a $reptok(one two three, two, four, 32) - one four three
+  echo -a $reptokcs(one two three twO, twO, four, 32) - one two three four
+  echo -a $result
+  echo -a The RGB color number for #7 (olive) is $color(7) with R,G,B values $rgb($color(7))
+  echo -a $right(abcdefg, 4) - defg
+  echo -a $rnick($chan,0)
+  echo -a $round(4.98472,3)
 }
