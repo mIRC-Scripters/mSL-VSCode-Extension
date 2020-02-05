@@ -329,4 +329,7 @@ alias identifiers {
   echo -a $prop
   echo -a $protect
   echo -a $puttok(a-b-c-d-e-f,TEST,3,46)) - a-b-TEST-d-e-f
+  ; Q
+  var %ini $qt($mircini) | echo -a %ini | echo -a $qt(%ini)
+  echo -a $query(0)
 }
