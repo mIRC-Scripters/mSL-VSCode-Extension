@@ -15,6 +15,9 @@
     },
     {
       "include": "#events"
+    },
+    {
+      "include": "#dialog"
     }
   ],
   "repository": {
@@ -167,6 +170,9 @@
           "end": "(?=\\)(?:\\x20|$))",
           "patterns": [
             {
+              "include": "#conditionals_content"
+            },
+            {
               "include": "#parameters"
             }
           ]
@@ -175,6 +181,15 @@
           "comment": "Matches conditional: else",
           "name": "keyword.control.conditional.msl",
           "match": "(?i)(?<=\\x20\\|\\x20|^)\\x20*(else)\\b"
+        }
+      ]
+    },
+    "conditionals_content": {
+      "patterns": [
+        {
+          "comment": "Matches: == < > <= >= // \\ & isin isincs iswm iswmcs isnum isletter isalnum isalpha islower isupper === ison isop ishop isvoice isreg ischan isban isquiet isaop isavoice isignore isprotected isnotify",
+          "name": "keyword.operator.msl",
+          "match": "(?i)!?(==?=?|(<|>)=?|\\/\\/|\\\\|&(?!&)|is(in(cs)?|wm(cs)?|(al)?num|letter|alpha|(low|upp)er|on|(a|h)?op|a?voice|reg|chan|ban|quiet|ignore|protected|notify))"
         }
       ]
     },
@@ -216,8 +231,8 @@
       "comment": "Matches identifiers that take parameters.",
       "patterns": [
         {
-          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin $atan $tan $avoice $banlist $base $bfind $bindip $bitoff $biton $bvar $bytes $calc $cb $ceil $chan $channel $chat $chr $click $cnick $color $colour $com $comcall $compress $comval $cos $cosh $count $countcs $crc $ctime $date $dccignore $dde $decode $decompress $deltok $dialog $did $didreg $didtok $didwm $sdir $disk $dll $dllcall $dns $duration $editbox $encode $envvar $eval $evalnext $exists $file $finddir $findfile $findtok $findtokcs $fline $floor $font $fopen $fread $fserv $fserve $get $getdir $getdot $gettok $gmt $group $hash $height $hfind $hget $highlight $hmac $hmatch $hotlink $hotp $hregex $hypot $ial $ialchan $ibl $iel $ignore $iif $iil $inellipse $ini $initopic $inpoly $input $inrect $inroundrect $instok $int $intersect $iptype $iql $isalias $isbit $isdde $isdir $isfile $islower $istok $istokcs $isupper $isutf $left $len $level $line $lines $link $lock $lof $log $log10 $longfn $longip $lower",
-          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice|banlist|base|bfind|bindip|bit(off|on)|bvar|bytes|calc|cb|ceil|chan(nel)?|chat|chr|click|cnick|colou?r|com(call|press|val)?|cosh?|count(cs)?|crc|ctime|date|dccignore|dde|decode|decompress|deltok|dialog|did(reg|tok|wm)?|sdir|disk|dll(call)?|dns|duration|editbox|encode|envvar|eval(next)?|exists|file|find(dir|file|tok(cs)?)|fline|floor|font|fopen|fread|fserve?|get(dir|dot|tok)?|gmt|group|hash|height|hget|highlight|hmac|hmatch|hnick|hotlink|hotp|hregex|hypot|ial(chan)?|ibl|iel|ignore|ii(f|l)|inellipse|ini(topic)?|inpoly|input|in(round)?rect|instok|int(ersect)?|iptype|iql|is(alias|bit|dde|dir|file|lower|tok(cs)?|upper|utf)|left|len|level|lines?|link|lock|lo(f|g(10)?)|long(fn|ip)|lower))\\(",
+          "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin $atan $tan $avoice $banlist $base $bfind $bindip $bitoff $biton $bvar $bytes $cb $ceil $chan $channel $chat $chr $click $cnick $color $colour $com $comcall $compress $comval $cos $cosh $count $countcs $crc $ctime $date $dccignore $dde $decode $decompress $deltok $dialog $did $didreg $didtok $didwm $sdir $disk $dll $dllcall $dns $duration $editbox $encode $envvar $eval $evalnext $exists $file $finddir $findfile $findtok $findtokcs $fline $floor $font $fopen $fread $fserv $fserve $get $getdir $getdot $gettok $gmt $group $hash $height $hfind $hget $highlight $hmac $hmatch $hotlink $hotp $hregex $hypot $ial $ialchan $ibl $iel $ignore $iif $iil $inellipse $ini $initopic $inpoly $input $inrect $inroundrect $instok $int $intersect $iptype $iql $isalias $isbit $isdde $isdir $isfile $islower $istok $istokcs $isupper $isutf $left $len $level $line $lines $link $lock $lof $log $log10 $longfn $longip $lower",
+          "begin": "(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice|banlist|base|bfind|bindip|bit(off|on)|bvar|bytes|cb|ceil|chan(nel)?|chat|chr|click|cnick|colou?r|com(call|press|val)?|cosh?|count(cs)?|crc|ctime|date|dccignore|dde|decode|decompress|deltok|dialog|did(reg|tok|wm)?|sdir|disk|dll(call)?|dns|duration|editbox|encode|envvar|eval(next)?|exists|file|find(dir|file|tok(cs)?)|fline|floor|font|fopen|fread|fserve?|get(dir|dot|tok)?|gmt|group|hash|height|hget|highlight|hmac|hmatch|hnick|hotlink|hotp|hregex|hypot|ial(chan)?|ibl|iel|ignore|ii(f|l)|inellipse|ini(topic)?|inpoly|input|in(round)?rect|instok|int(ersect)?|iptype|iql|is(alias|bit|dde|dir|file|lower|tok(cs)?|upper|utf)|left|len|level|lines?|link|lock|lo(f|g(10)?)|long(fn|ip)|lower))\\(",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.identifier.msl"
@@ -234,6 +249,48 @@
               "include": "#parameters"
             }
           ]
+        },
+        {
+          "comment": "Identifiers: $calc",
+          "begin": "(\\$\\$?~?calc)\\(",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.other.identifier.msl"
+            }
+          },
+          "end": "(?i)\\)(?:\\.([^\\s|\\)|,]+))?",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.other.identifierproperty.msl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#parameters"
+            },
+            {
+              "include": "#calc_content"
+            }
+          ]
+        }
+      ]
+    },
+    "calc_content": {
+      "comment": "Matches $calc contents",
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.msl",
+          "match": "[+\\-*/%^]"
+        },
+        {
+          "name": "meta.arithmetic.msl",
+          "begin": "(<=\\()",
+          "end": "(?<=\\))",
+          "patterns": [
+            {
+              "include": "#calc_content"
+            }
+          ]
         }
       ]
     },
@@ -247,7 +304,7 @@
         },
         {
           "comment": "Identifiers: $?",
-          "match": "(\\$\\$?~?\\?(?:[^\\s=]+)?)(?:(=)(\"(?:[^\"])*\"))?(?=\\s|\\)|,)",
+          "match": "(\\$\\$?~?(\\?(?:[^\\s=]+)?|dir|hfile))(?:(=)(\"(?:[^\"])*\"))?(?=\\s|\\)|,)",
           "captures": {
             "1": {
               "name": "keyword.other.identifier.msl"
@@ -597,6 +654,55 @@
           "patterns": [
             {
               "include": "#code_content"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "patterns": [
+        {
+          "comment": "Matches dialog declaration.",
+          "name": "meta.dialog.code.msl",
+          "begin": "(?i)^(dialog)\\x20+(?:(-l)\\x20+)?(?!-l)([^\\s]+)\\s*(?={)",
+          "beginCaptures": {
+            "1": {
+              "name": "storage.type.dialog.msl"
+            },
+            "2": {
+              "name": "storage.modifier.dialog.msl"
+            },
+            "3": {
+              "name": "entity.name.section.msl"
+            }
+          },
+          "end": "(?<=}$)",
+          "patterns": [
+            {
+              "include": "#dialog_content"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog_content": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "comment": "Matches dialog title icon size option text edit button check radio box scroll list combo icon link tab menu item",
+          "begin": "(?i)^\\x20*(title|icon|size|option|text|edit|button|check|radio|box|scroll|list|combo|icon|link|tab|menu|item)\\x20+",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.dialog.control.msl"
+            }
+          },
+          "end": "(?<=$)",
+          "contentName": "string.quoted.double.control.msl",
+          "patterns": [
+            {
+              "include": "#parameters"
             }
           ]
         }

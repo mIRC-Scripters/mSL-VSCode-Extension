@@ -54,7 +54,9 @@ alias identifiers {
   bset -ta &var 1 chlo $+ $chr(232) / $utfencode(chlo $+ $chr(232) )  | echo -a $bvar(&var,1-) // $bvar(&var,1-).text
   echo -a $bytes(317889213,b) - $bytes(10000000000,g).suf
   ; C
-  echo -a $calc(3 + 5) - echo -a $calc(3 * 4 * (3 + 5))) - echo -a $calc(10 % 3)
+  echo -a $calc(3 + 5)
+  echo -a $calc(3 * 4 * (3 + 5)))
+  echo -a $calc(10 % 3)
   echo -ag $caller
   echo -a $iif($input(Click cancel to see the result.,nv) == $cancel,Pressed Cancel, Pressed Yes or No)
   echo -a $cb - $cb(0)
@@ -113,7 +115,7 @@ alias identifiers {
   echo -a $didwm($dname,$did,*.exe,N)
   ; ask SykO about supporting the following syntax:
   ; Old- currently not in msl.tmLanguage.json-but still supported by mIRC!
-  echo -a $dir='select dir' c:\
+  echo -a $dir="select dir" c:\
   ; New
   echo -a $sdir($mircdir,"choose a folder!,Ok!)
   echo -a $disk(0)

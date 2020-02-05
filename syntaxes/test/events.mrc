@@ -272,7 +272,6 @@ alias vctest {
  vcadd connect Dalnet, connect Efnet, connect Undernet, connect IRCnet
  vcadd Part Channel, Disconnect, List Commands, Moo Cow
 }
- 
 on 1:vcmd:connect*:*:server $2
 on 1:vcmd:part channel:*:if ($active ischan) part $active
 on 1:vcmd:disconnect:*:quit
@@ -307,7 +306,6 @@ on ^*:HOTLINK:*help*:#:{
  if ($1 == helpme) return
  halt
 }
- 
 on *:HOTLINK:*:*:echo clicked word $1 in line $hotline $hotlinepos
 ON *:KEYDOWN:@myWindow:38,42,55,78:echo -a $keyval
 alias keyDownTest {
@@ -335,8 +333,6 @@ on *:parseline:out:PRIVMSG & ?Hello?:echo -a $parseline
 on *:parseline:out:$(PRIVMSG & :Hello?):echo -a $parseline
 on $*:parseline:out:/^PRIVMSG [^ ]+ :Hello./:echo -a $parseline
 
-
-
 raw 319:*:{
   ; $1 = <myname>
   ; $2 = <nick>
@@ -345,7 +341,6 @@ raw 319:*:{
   ; $5 = <[mode]#channel 3>
   ; $6 ...
 }
-
 raw 319:*:{
   ;We indicated that the event should trigger on the server's numeric value of 319
   if (%whois. [ $+ [ $2 ] ]) {
