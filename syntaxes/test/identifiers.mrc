@@ -205,7 +205,7 @@ alias identifiers {
   echo -a $iil(#,0)
   echo -a $inellipse(50,50,10,10,100,100)
   echo -a $ini($mircini,0) - $initopic($mircini,0)
-  echo -a $inmidi
+  echo -a $inmidi - $inmidi.length - $inmidi.fname - $inmidi.pos - $inmidi.pause
   echo -a mIRC is currently listing bans for $chan(1): $iif($chan(1).banlist == $inmode,yes,no)
   echo -a $inmp3
   echo -a on *:INPUT:*:echo -a $!inpaste: $inpaste
@@ -213,11 +213,11 @@ alias identifiers {
   echo -a $input(Type something for me,e)
   echo -a $inrect(50,50,10,10,100,100)
   echo -a $inroundrect(50,50,10,10,100,100,5,5)
-  echo -a $insong
+  echo -a $insong - $insong.length - $insong.fname - $insong.pos - $insong.pause
   echo -a $instok(one two three, four,4, 32)
   echo -a $int(1.9)
   echo -a $intersect(%x,%y,%x1,%y1,%x2,%y2,%x3,%y3,rr)
-  echo -a $inwave - $inwave.length
+  echo -a $inwave - $inwave.length - $inwave.fname - $inwave.pos - $inwave.pause
   echo -a Currently handling a who reply for chan $chan(1): $iif($chan(1).inwho == $inwho,yes,no)
   echo -a $ip
   echo -a $iptype(5.6.7.8)
@@ -285,5 +285,25 @@ alias identifiers {
   echo -a $modespl
   echo -a $mp3($insong.fname).artist
   echo -a $mp3dir
-  
+  echo -a $msfile( $sysdir(profile)  ) / $sfstate / $msfile(0) / $msfile(1)
+  echo -a $asctime($msgstamp, "[HH:nn:ss]") $text
+  echo -a $msgtags(0)
+  ; N
+  echo -a on *:dns: echo -a $naddress
+  echo -a Nick in on event: $nick - Total users: $iif($active ischan,$nick(#,0))
+  echo -a $nickmode
+  echo -a You clicked: $iif($input(Click no to see the result.,yv) == $no,no,yes)
+  echo -a $network
+  echo -a $nofile($mircexe) - $nopath($mircexe)
+  echo -a $nopnick($chan,1) - $nhnick($chan,1) - 
+  echo -a ON ME:^*:NICK:echo $chan You are now ==> $newnick | haltdef
+  var %ini $qt($mircini) echo -a %ini | echo -a $noqt(%ini)
+  var %n 5 | echo -a $not(%n) $base($not(%n),10,16) - 4294967290 FFFFFFFA
+  echo -a $notags(te\spd=5\st)
+  echo -a = $+ $nick equals =$nick in on chat events
+  echo -a Notify is turned $iif($notify,on,off) - $notify(0)
+  if ($? != $null) echo -a you entered $v1
+  echo -a raw *:*:echo -a $numeric
+  echo -a $numtok(a-b-c-d-e,45) - $numtok(x1xxxx2x3x4x,120) - $numtok(1x2X3x4,120)
+  echo -a $nvnick($chan,1)
 }
