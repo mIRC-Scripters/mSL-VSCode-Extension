@@ -428,4 +428,14 @@ alias identifiers {
   echo -a $treebar
   echo -a $iif($isfile($mircexe) == $true,true,false)
   echo -a $trust(0)
+  ; U
+  echo -a ON *:TEXT:*:#:echo -a User level triggered: $ulevel
+  echo -a $ulist(*,,0)
+  tokenize 32 $!me | timer -ho 1 0 echo -a $unsafe($1-)
+  echo -a $upper(ab)
+  echo -a $uptime(system,0) is the same as $ticks - mIRC has been running for $uptime(mirc,2)
+  echo -a $url - $url(0)
+  echo -a $urlget(https://github.com/solbu/Peace-and-Protection/archive/v4.22.8.zip ,gf,peace-and-protection-v4-22-8.zip,noop)
+  echo -a $usermode
+  echo -a $utfdecode(Ã©) - $utfencode(é)
 }
