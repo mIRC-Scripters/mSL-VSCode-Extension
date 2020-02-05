@@ -258,4 +258,32 @@ alias identifiers {
   echo -a $longip(158.152.50.239) - $longip(2660774639)
   echo -a $lower(testÕ)
   timer $+ $rand(11111,99999) 1 1 noop | echo -a $ltimer
+  ; M
+  echo -a on *:text:*:#:echo -a $maddress - $maddress(*,1)
+  echo -a $mask(nick!user@host,7)
+  echo -a on *:text:*:#:echo -a $matchkey
+  echo -a $matchtok(one two three, e, 0, 32) - $matchtok(one two three, e, 2, 32)
+  echo -a $matchtokcs(one two thrEe, E, 0, 32) - $matchtokcs(one Two Three, T, 2, 32)
+  echo -a $maxlenl - $maxlenm - $maxlens
+  echo -a $md5($mircexe,2)
+  echo -a $me
+  echo -a Used in a menu definition e.g. menu nicklist,channel --> $iif($menu == nicklist,...)
+  echo -a $menubar
+  echo -a Used in a menu definition e.g. menu nicklist,channel --> $iif($menu == channel && $menucontext == treebar,...)
+  echo -a Used in a menu definition e.g. menu nicklist,channel,@win,@other --> $iif($menutype == custom,$iif($menu == @other,stuff,otherstuff))
+  echo -a $mid(abcdefghij,2,3) - $mid(abcdefghij,2) - $mid(abcdefghij,-6,2) - $mid(abcdefghij,3,-2) - $mid(abcdefghij,3,0)
+  echo -a $mididir
+  echo -a $mircdir
+  echo -a $mircexe
+  echo -a $mircini
+  var %i 33 | var %f | while (%i isnum 33-126) { var %f %f $+ $chr(%i) | inc %i } | echo -a orig: %f | echo -a mkfn: $mkfn(%f)
+  var %i 33 | var %f | while (%i isnum 33-126) { var %f %f $+ $chr(%i) | inc %i } | echo -a orig: %f | echo -a mklogfn: $mklogfn(%f)
+  var %i 33 | var %f | while (%i isnum 33-126) { var %f %f $+ $chr(%i) | inc %i } | echo -a orig: %f | echo -a mknk: $mknickfn(%f)
+  echo -a $mnick
+  echo -a on *:op:#:echo -a $mode(0)
+  echo -a on *:op:#:$modefirst - $modelast
+  echo -a $modespl
+  echo -a $mp3($insong.fname).artist
+  echo -a $mp3dir
+  
 }
