@@ -363,7 +363,7 @@ alias identifiers {
   echo -a $scid(0)
   echo -a $scon(0)
   echo -a This is script: $script and scripts loaded: $script(0)
-  echo -a $scriptdir - $scriptline - $scriptdirTEMP\hashtable.hsh
+  echo -a $scriptdir - $scriptline - $scriptdirTEMP\hashtable.hsh - $custom($scriptdirTEMP\test.txt) - $custom2($scriptdirTEMP\test.txt,%var)
   echo -a $sdir($mircdir,"choose a folder!,Ok!)
   echo -a $sdir="select dir" c:\
   echo -a $send(0) - $send(2).pc
