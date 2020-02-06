@@ -281,7 +281,7 @@ alias identifiers {
   var %i 33 | var %f | while (%i isnum 33-126) { var %f %f $+ $chr(%i) | inc %i } | echo -a orig: %f | echo -a mknk: $mknickfn(%f)
   echo -a $mnick
   echo -a on *:op:#:echo -a $mode(0)
-  echo -a on *:op:#:$modefirst - $modelast
+  echo -a on *:op:#:echo -a $modefirst - $modelast
   echo -a $modespl
   echo -a $mp3($insong.fname).artist
   echo -a $mp3dir
