@@ -383,8 +383,8 @@ alias identifiers {
   echo -a $snicks
   echo -a $snotify
   echo -a $sock(*,1)
-  on *:sockread:name:if ($sockerr) return | var %a |  if (!$sockbr) return | if (%a == something) echo -a ok
-  on *:sockread:*:echo -a $sockname
+  echo -a on *:sockread:name:if ($sockerr) return | var %a |  if (!$sockbr) return | if (%a == something) echo -a ok
+  echo -a on *:sockread:*:echo -a $sockname
   echo -a $sorttok(C a c b A B,32,a) - $sorttokcs(C a c b A B,32,a)
   if ($insong) return $sound($insong.fname).artist
   echo -a $speak(0)
@@ -442,13 +442,13 @@ alias identifiers {
   echo $vc(0) - $vcmd(0)
   echo -a $vcmdstat - $vcmdver
   echo -a $version
-  ON *:VOICE:#:echo -a $vnick
+  echo -a ON *:VOICE:#:echo -a $vnick
   echo -a $vol(master)
   ; W
   echo -a $wavedir - has been replaced by $!sound(wave)
   echo -a $wid
   echo -a $width(test,verdana,15)
-  on *:text:*:#:echo -a $wildsite
+  echo -a on *:text:*:#:echo -a $wildsite
   echo -a $wildtok(one two three,t*e,1,32) - returns three
   echo -a $wildtokcs(one two three twO, t*O,1,32) - returns twO
   echo -a $window - $window(0)
