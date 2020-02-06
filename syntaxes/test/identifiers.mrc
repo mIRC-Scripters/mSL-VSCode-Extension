@@ -76,7 +76,7 @@ alias identifiers {
   echo -a $cnick(1).color
   echo -a $color(action) - $color(action).dd
   echo -a $com(Locator,ConnectServer,3, dispatch* Services) - $com(Services, InstancesOf,3,string,Win32_Processor,dispatch* Instances) - $com(Instances).result
-  echo -a $comcall(WShell, cbthread, Run, 1, bstr*, $mirdirfoo.vbs, int, 1, bool, 1)
+  echo -a $comcall(WShell, cbthread, Run, 1, bstr*, $mircdirfoo.vbs, int, 1, bool, 1)
   echo -a Total common channels: $comchan(myFriend,0) --- Is opped on $comchan(myFriend,1) $+ : $comchan(myFriend,1).op
   echo -a $comchar
   echo -a $comerr
