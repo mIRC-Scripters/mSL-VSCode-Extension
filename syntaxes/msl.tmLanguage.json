@@ -166,7 +166,7 @@
         {
           "comment": "Matches conditionals: if elseif while",
           "name": "meta.conditional.msl",
-          "begin": "(?i)(?:(?<=\\G|\\x20\\|\\x20|^)\\x20*(if|elseif|while)|(?:(?<=\\))\\x20+(&&|\\|\\|)))\\x20+(?=\\()",
+          "begin": "(?i)(?:(?<=\\x20\\|\\x20|^|\\G)\\x20*(if|elseif|while)|(?:(?<=\\))\\x20+(&&|\\|\\|)))\\x20+(?=\\()",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.conditional.msl"
@@ -197,7 +197,7 @@
         {
           "comment": "Matches: == < > <= >= // \\ & isin isincs iswm iswmcs isnum isletter isalnum isalpha islower isupper === ison isop ishop isvoice isreg ischan isban isquiet isaop isavoice isignore isprotected isnotify",
           "name": "keyword.operator.msl",
-          "match": "(?i)!?(==?=?|(<|>)=?|\\/\\/|\\\\|&(?!&)|is(in(cs)?|wm(cs)?|(al)?num|letter|alpha|(low|upp)er|on|(a|h)?op|a?voice|reg|chan|ban|quiet|ignore|protected|notify))"
+          "match": "(?i)(!?(==?=?|(<|>)=?|\\/\\/|\\\\|&(?!&)|is(in(cs)?|wm(cs)?|(al)?num|letter|alpha|(low|upp)er|on|(a|h)?op|a?voice|reg|chan|ban|quiet|ignore|protected|notify))|(?<=\\()!)"
         },
         {
           "include": "#constants"
@@ -246,7 +246,7 @@
       "patterns": [
         {
           "comment": "Identifiers with no props: $+() $abook $abs $acos $cos $date $address $addtok $addtokcs $agent $alias $and $ansi2mirc $aop $asc $asctime $asin $sin $atan $tan $avoice $banlist $base $bfind $bindip $bitoff $biton $bvar $bytes $cb $ceil $chan $channel $chat $chr $click $cnick $color $colour $com $comcall $comchan $compress $comval $cos $cosh $count $countcs $crc $ctime $date $dccignore $dde $decode $decompress $deltok $dialog $did $didreg $didtok $didwm $sdir $disk $dll $dllcall $dns $duration $editbox $encode $envvar $eval $evalnext $exists $fgetc $file $finddir $findfile $findtok $findtokcs $fline $floor $font $fopen $fread $fserv $fserve $get $getdir $getdot $gettok $gmt $group $hash $height $hfind $hget $highlight $hmac $hmatch $hotlink $hotp $hregex $hypot $ial $ialchan $ibl $iel $ignore $iil $inellipse $ini $initopic $inpoly $input $inrect $inroundrect $instok $int $intersect $iptype $iql $isalias $isbit $isdde $isdir $isfile $islower $istok $istokcs $isupper $isutf $left $len $level $line $lines $link $lock $lof $log $log10 $longfn $longip $lower $maddress $mask $matchtok $matchtokcs $md5 $mid $mkfn $mklogfn $mknickfn $mode $mp3 $msfile $msgtags $nick $nofile $nopnick $nhnick $nopath $noqt $not $notags $notify $numtok $nvnick $onpoly $opnick $or $ord $pic $play $portfree $pos $poscs $puttok $qt $query $r $rand $rands $read $readini $regex $regml $regmlex $regsub $regsubex $remove $removecs $remtok $remtokcs $replace $replacecs $replacex $replacexcs $reptok $reptokcs $rgb $right $rnick $round $samepath $scid $scon $script $sdir $send $server $sfile $sha1 $sha256 $sha384 $sha512 $shortfn $sinh $sline $snick $sock $sorttok $sorttokcs $sound $speak $sqrt $str $strip $style $submenu $sysdir $tanh $timer $tip $token $toolbar $totp $trust $ulist $unsafe $upper $uptime $url $urlget $utfdecode $utfencode $var $vc $vcmd $vol $width $wildtok $wildtokcs $window $wrap $xor $zip",
-          "begin": "(?<=\\s|\\(|\\,|^)(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice|banlist|base|bfind|bindip|bit(off|on)|bvar|bytes|cb|ceil|chan(nel)?|chat|chr|click|cnick|colou?r|com(call|chan|press|val)?|cosh?|count(cs)?|crc|ctime|date|dccignore|dde|decode|decompress|deltok|dialog|did(reg|tok|wm)?|disk|dll(call)?|dns|duration|editbox|encode|envvar|eval(next)?|exists|fgetc|file|find(dir|file|tok(cs)?)|fline|floor|font|fopen|fread|fserve?|get(dir|dot|tok)?|gmt|group|hash|height|hfind|hget|highlight|hmac|hmatch|hnick|hotlink|hotp|hregex|hypot|ial(chan)?|ibl|iel|ignore|iil|inellipse|ini(topic)?|inpoly|input|in(round)?rect|instok|int(ersect)?|iptype|iql|is(alias|bit|dde|dir|file|lower|tok(cs)?|upper|utf)|left|len|level|lines?|link|lock|lo(f|g(10)?)|long(fn|ip)|lower|maddress|mask|matchtok(cs)?|md5|mid|mk(log|nick)?fn|mode|mp3|msfile|msgtags|(nh)?nick|no(file|pnick|t(ags|ify)?|path|qt)?|numtok|nvnick|onpoly|opnick|ord?|pic|play|portfree|pos(cs)?|puttok|qt|query|r(ands?|ead(ini)?|eg(ex|ml(ex)?|sub(ex)?)|em(ove(cs)?|tok(cs)?)|eplace(cs|x(cs)?)?|eptok(cs)?|gb|ight|ound|nick)?|samepath|scid|scon|script|sdir|send|server|sfile|sha(1|256|384|512)|shortfn|sinh|sline|snick|sock|sorttok(cs)?|sound|speak|sqrt|str(ip)?|style|submenu|sysdir|tanh|timer|tip|token|toolbar|totp|trust|ulist|unsafe|upper|uptime|url(get)?|utf(de|en)code|var|vc(md)?|vol|width|wildtok(cs)?|window|wrap|xor|zip))\\(",
+          "begin": "(?<=\\s|\\(!|\\(|\\,|^)(\\$\\$?~?(\\+|abook|a?cos|abs|date|add(ress|tok(cs)?)|agent|alias|and|ansi2mirc|aop|asc(time)?|a?sin|a?tan|avoice|banlist|base|bfind|bindip|bit(off|on)|bvar|bytes|cb|ceil|chan(nel)?|chat|chr|click|cnick|colou?r|com(call|chan|press|val)?|cosh?|count(cs)?|crc|ctime|date|dccignore|dde|decode|decompress|deltok|dialog|did(reg|tok|wm)?|disk|dll(call)?|dns|duration|editbox|encode|envvar|eval(next)?|exists|fgetc|file|find(dir|file|tok(cs)?)|fline|floor|font|fopen|fread|fserve?|get(dir|dot|tok)?|gmt|group|hash|height|hfind|hget|highlight|hmac|hmatch|hnick|hotlink|hotp|hregex|hypot|ial(chan)?|ibl|iel|ignore|iil|inellipse|ini(topic)?|inpoly|input|in(round)?rect|instok|int(ersect)?|iptype|iql|is(alias|bit|dde|dir|file|lower|tok(cs)?|upper|utf)|left|len|level|lines?|link|lock|lo(f|g(10)?)|long(fn|ip)|lower|maddress|mask|matchtok(cs)?|md5|mid|mk(log|nick)?fn|mode|mp3|msfile|msgtags|(nh)?nick|no(file|pnick|t(ags|ify)?|path|qt)?|numtok|nvnick|onpoly|opnick|ord?|pic|play|portfree|pos(cs)?|puttok|qt|query|r(ands?|ead(ini)?|eg(ex|ml(ex)?|sub(ex)?)|em(ove(cs)?|tok(cs)?)|eplace(cs|x(cs)?)?|eptok(cs)?|gb|ight|ound|nick)?|samepath|scid|scon|script|sdir|send|server|sfile|sha(1|256|384|512)|shortfn|sinh|sline|snick|sock|sorttok(cs)?|sound|speak|sqrt|str(ip)?|style|submenu|sysdir|tanh|timer|tip|token|toolbar|totp|trust|ulist|unsafe|upper|uptime|url(get)?|utf(de|en)code|var|vc(md)?|vol|width|wildtok(cs)?|window|wrap|xor|zip))\\(",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.identifier.msl"
@@ -266,7 +266,7 @@
         },
         {
           "comment": "Identifiers: $calc",
-          "begin": "(?<=\\s|\\(|\\,|^)(\\$\\$?~?calc)\\(",
+          "begin": "(?<=\\s|\\(!|\\(|\\,|^)(\\$\\$?~?calc)\\(",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.identifier.msl"
@@ -289,7 +289,7 @@
         },
         {
           "comment": "Identifiers: $iif",
-          "begin": "(?<=\\s|\\(|\\,|^)(\\$\\$?~?iif)\\(",
+          "begin": "(?<=\\s|\\(!|\\(|\\,|^)(\\$\\$?~?iif)\\(",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.identifier.msl"
@@ -312,7 +312,7 @@
         },
         {
           "comment": "Possible custom identifier",
-          "begin": "(?<=\\s|\\(|\\,|^)(\\$\\$?~?[^\\s(),]+)\\(",
+          "begin": "(?<=\\s|\\(!|\\(|\\,|^)(\\$\\$?~?[^\\s(),]+)\\(",
           "beginCaptures": {
             "1": {
               "name": "support.function.name.msl"
@@ -357,7 +357,7 @@
         {
           "comment": "Identifiers: $0 $! $* $+ $N-N $active $activecid $activewid $adate $date $address $agentname $agentstat $agentver $anick $aop $appactive $appstate $asctime $auto $avoice $away $awaymsg $awaytime $banmask $beta $bits $bnick $caller $cancel $cb $cd $chan $chanmodes $chantypes $cid $clevel $cmdbox $cmdline $comchar $comerr $compact $cr $creq $crlf $ctime $ctimer $ctrlenter $date $day $daylight $dbuh $dbuw $dccignore $dccport $ddename $debug $devent $did $dlevel $dname $dqwindow $ebeeps $email $emailaddr $error $event $eventid $eventparms $exiting $false $feof $ferr $filename $filtered $finddirn $findfilen $flinen $fromeditbox $fulladdress $fulldate $fullname $fullscreen $getdir $gmt $halted $highlight $hnick $host $hotline $hotlinepos $iaddress $ial $idle $ifmatch $ifmatch2 $ignore $inmidi[.prop] $inmode $inmp3 $inpaste $insong[.prop] $inwave[.prop] $inwho $ip $isadmin $isid $keychar $keyrpt $keyval $knick $lactive $lactivecid $lactivewid $leftwin $leftwincid $leftwinwid $lf $locked $logdir $logstamp $logstampfmt $ltimer $maddress $matchkey $maxlenl $maxlenm $maxlens $me $menu $menubar $menucontext $menutype $mididir $mircdir $mircexe $mircini $mnick $modefirst $modelast $modespl $mouse[.prop] $mp3dir $msgstamp $msgtags $naddress $nick $nickmode $network $newnick $no $notify $null $numeric $ok $online $onlineserver $onlinetotal $opnick $os $parms $parseline $parsetype $parseutf $passivedcc $pi $pnick $port $portable $prefix $prop $protect $raddress $rawbytes $rawmsg $readn $regerrstr $remote $result $script $scriptdir $scriptline $server $serverip $servertarget $sfstate $show $signal $site $snicks $snotify $sockerr $sockbr $sockname $sreq $ssl $sslcertsha1 $sslcertsha256 $sslcertvalid $ssldll $ssllibdll $sslready $sslversion $starting $status $stripped $switchbar $target $tempfn $ticks $time $timeout $timestamp $timestampfmt $timezone $tips $titlebar $toolbar $treebar $true $ulevel $url $usermode $v1 $v2 $vcmdstat $vcmdver $version $vnick $wavedir $wid $wildsite $window $yes",
           "name": "keyword.other.identifier.msl",
-          "match": "(?<=\\s|\\(|\\,|^)\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime|auto|avoice|away(msg|time)?|banmask|beta|bits|bnick|caller|cancel|cb|cd|chan(modes|types)?|cid|clevel|cmd(box|line)|com(char|err|pact)|cr(eq|lf)?|ctimer?|ctrlenter|date|day(light)?|dbu(h|w)|dccignore|dccport|ddename|debug|devent|did|dlevel|dname|dqwindow|ebeeps|email(addr)?|error|event(id|parms)?|exiting|false|fe(of|rr)|filename|filtered|find(dirn|filen)|flinen|fromeditbox|full(address|date|name|screen)|getdir|gmt|halted|highlight|hnick|host|hotline(pos)?|ia(ddress|l)|idle|ifmatch2?|ignore|in(midi(.(pos|length|fname|pause))?|mode|mp3|paste|song(.(pos|length|fname|pause))?|wave(.(pos|length|fname|pause))?|who)|ip|is(admin|id)|key(char|rpt|val)|knick|lactive(cid|wid)?|leftwin(cid|wid)?|lf|locked|log(dir|stamp(fmt)?)|ltimer|maddress|matchkey|max(lenl|lenm|lens)|me|menu(bar|context|type)?|mididir|mircdir([^\\s,)]+)?|mircexe|mircini|mnick|modefirst|modelast|modespl|mouse(.(x|y||mx|my|dx|dy|cx|cy|win|lb|key))?|mp3dir|msg(stamp|tags)|naddress|nick(mode)?|network|newnick|no(tify)?|null|numeric|ok|online(server|total)?|opnick|os|parms|parse(line|type|utf)|passivedcc|pi|pnick|port(able)?|prefix|prop|protect|raddress|raw(bytes|msg)|readn|regerrstr|remote|result|script(line|dir([^\\s,)]+)?)?|server(ip|target)?|sfstate|show|signal|site|snicks|snotify|sock(err|br|name)|sreq|ssl(cert(sha(1|256)|valid)|(lib)?dll|ready|version)?|starting|status|stripped|switchbar|target|tempfn|ticks|time(out|stamp(fmt)?|zone)|tips|titlebar|toolbar|treebar|true|ulevel|url|usermode|v1|v2|vcmd(stat|ver)|version|vnick|wavedir|wid|wildsite|window|yes)(?=\\s|\\)|,)"
+          "match": "(?<=\\s|\\(!|\\(|\\,|^)\\$\\$?~?(0|\\!|&(?=$)|\\*|\\+\\+?|[1-9]+(-?([0-9]+)|[^\\s|\\)|,]+)?|active((c|w)id)?|a?date|address|agent(name|stat|ver)|anick|aop|app(active|state)|asctime|auto|avoice|away(msg|time)?|banmask|beta|bits|bnick|caller|cancel|cb|cd|chan(modes|types)?|cid|clevel|cmd(box|line)|com(char|err|pact)|cr(eq|lf)?|ctimer?|ctrlenter|date|day(light)?|dbu(h|w)|dccignore|dccport|ddename|debug|devent|did|dlevel|dname|dqwindow|ebeeps|email(addr)?|error|event(id|parms)?|exiting|false|fe(of|rr)|filename|filtered|find(dirn|filen)|flinen|fromeditbox|full(address|date|name|screen)|getdir|gmt|halted|highlight|hnick|host|hotline(pos)?|ia(ddress|l)|idle|ifmatch2?|ignore|in(midi(.(pos|length|fname|pause))?|mode|mp3|paste|song(.(pos|length|fname|pause))?|wave(.(pos|length|fname|pause))?|who)|ip|is(admin|id)|key(char|rpt|val)|knick|lactive(cid|wid)?|leftwin(cid|wid)?|lf|locked|log(dir|stamp(fmt)?)|ltimer|maddress|matchkey|max(lenl|lenm|lens)|me|menu(bar|context|type)?|mididir|mircdir([^\\s,)]+)?|mircexe|mircini|mnick|modefirst|modelast|modespl|mouse(.(x|y||mx|my|dx|dy|cx|cy|win|lb|key))?|mp3dir|msg(stamp|tags)|naddress|nick(mode)?|network|newnick|no(tify)?|null|numeric|ok|online(server|total)?|opnick|os|parms|parse(line|type|utf)|passivedcc|pi|pnick|port(able)?|prefix|prop|protect|raddress|raw(bytes|msg)|readn|regerrstr|remote|result|script(line|dir([^\\s,)]+)?)?|server(ip|target)?|sfstate|show|signal|site|snicks|snotify|sock(err|br|name)|sreq|ssl(cert(sha(1|256)|valid)|(lib)?dll|ready|version)?|starting|status|stripped|switchbar|target|tempfn|ticks|time(out|stamp(fmt)?|zone)|tips|titlebar|toolbar|treebar|true|ulevel|url|usermode|v1|v2|vcmd(stat|ver)|version|vnick|wavedir|wid|wildsite|window|yes)(?=\\s|\\)|,)"
         },
         {
           "comment": "Identifiers: $? $dir $hfile $sdir",
@@ -377,12 +377,12 @@
         {
           "comment": "Identifiers: =$nick",
           "name": "keyword.other.identifier.msl",
-          "match": "(?<=\\s|\\(|\\,|^)(\\=\\$\\$?~?nick)(?=\\b)"
+          "match": "(?<=\\s|\\(!|\\(|\\,|^)(\\=\\$\\$?~?nick)(?=\\b)"
         },
         {
           "comment": "Possible custom identifier",
           "name": "support.function.name.msl",
-          "match": "(?<=\\s|\\(|\\,|^)(\\$\\$?~?[^\\s(),]+)(?=\\b)"
+          "match": "(?<=\\s|\\(!|\\(|\\,|^)(\\$\\$?~?[^\\s(),]+)(?=\\b)"
         }
       ]
     },
@@ -405,7 +405,7 @@
               "name": "support.variable.name.msl"
             }
           },
-          "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)",
+          "end": "(?=\\z|\\x20+\\|\\x20+[^\\x20]|\\x20}|$)",
           "patterns": [
             {
               "include": "#switches"
@@ -418,7 +418,7 @@
         {
           "comment": "Matches possible custom commands.",
           "name": "meta.cmd.msl",
-          "begin": "(?i)(?:\\x20+\\|\\x20+|(?<=else\\x20)|^\\x20*|\\)|\\G)\\x20*(?!\\|\\|\\x20)(\\/+)?([!|.]{1,2})?((?![{};%&$])[^\\s]+)",
+          "begin": "(?i)(?:\\x20+\\|\\x20+|(?<=else\\x20)|^\\x20*|\\)|\\G)\\x20*(?!\\|\\|\\x20)(\\/+)?([!|.]{1,2})?(?:(?![{};%&$]|if|else(?:if)?|while)([^\\s]+))",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.command.symbol.msl"
@@ -430,7 +430,7 @@
               "name": "support.function.name.msl"
             }
           },
-          "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)",
+          "end": "(?=\\z|\\x20\\|\\x20[^\\x20]|\\x20}|$)",
           "patterns": [
             {
               "include": "#switches"
