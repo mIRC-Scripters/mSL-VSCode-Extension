@@ -315,7 +315,6 @@ alias identifiers {
   echo -a $ord(3)
   echo -a $os
   ; P
-  echo -a $parm1 $parm2 $parm3 ... $parm19 - $parm100
   echo -a $len($1-) -- $len($parms)
   echo -a on *:parseline:*:*:echo -a $parseline - $parsetype - $parseutf
   echo -a $pi
@@ -341,8 +340,6 @@ alias identifiers {
   echo -a $read(versions.txt,nt,3)
   echo -a $readini($mircini,n,chanfolder,n0)
   noop $read($mircini,tnw,*mirc*) | echo -a $readn
-  ; regebr doesn't seem to return a value when used on mIRC 7.58 + crossover (macos)
-  echo -a $regbr(test,0)
   echo -a $regex($str(a,2700),/(?<=a*)/) $regerrstr
   echo -a $regex(abcd,/[a-z]/g) $regex(test,This is a test message,/(is|es)/g) $regml(test,0) - $regmlex(test,4,1)
   var %a | echo -a $regsub(abcd,/[a-z]/g,1,%a)
@@ -425,7 +422,6 @@ alias identifiers {
   echo -a $titlebar
   echo -a $token(a-b-c-d-e,2,45) - returns b - replaced by $!gettok()
   echo -a $toolbar - $toolbar(0)
-  echo -a $topic(#mirc) - replaced by $chan(#mirc).topic
   echo -a $totp(Secret case-sensitive Pass Key,$ctime,sha512,9,3600)
   echo -a $treebar
   echo -a $iif($isfile($mircexe) == $true,true,false)
