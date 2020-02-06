@@ -361,7 +361,7 @@
         },
         {
           "comment": "Identifiers: $? $dir $hfile $sdir",
-          "match": "(?<=\\s|\\(|\\,|^)(\\$\\$?~?(\\?(?:[^\\s=]+)?|s?dir|hfile))(?:(=)(\"(?:[^\"])*\"))?(?=\\s|\\)|,)",
+          "match": "(?<=\\s|\\(|\\,|^)(\\$\\$?~?(?:\\?(?:[^\\s=]+)?|s?dir|hfile))(?:(=)(\"(?:[^\"])*\"))?(?=\\s|\\)|,)",
           "captures": {
             "1": {
               "name": "keyword.other.identifier.msl"

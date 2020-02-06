@@ -368,6 +368,7 @@ alias identifiers {
   echo -a This is script: $script and scripts loaded: $script(0)
   echo -a $scriptdir - $scriptline - $scriptdirTEMP\hashtable.hsh
   echo -a $sdir($mircdir,"choose a folder!,Ok!)
+  echo -a $sdir="select dir" c:\
   echo -a $send(0) - $send(2).pc
   echo -a $!server = $server - total servers for dalnet: $server(0,Dalnet)
   echo -a $serverip
