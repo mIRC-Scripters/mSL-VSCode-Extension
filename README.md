@@ -4,8 +4,11 @@ This is a Visual Studio Code extension that adds support for mIRC Scripting Lang
 
 ## Features
 
-- Syntax highlighting (WIP)
+- Syntax highlighting
+  - mIRC
+  - AdiIRC (WIP)
 - Snippets (WIP)
+- Error reporting (WIP)
 
 ## Extension Settings
 
