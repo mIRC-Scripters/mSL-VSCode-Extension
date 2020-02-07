@@ -4,7 +4,7 @@ alias identifiers {
   echo -a $0
   echo -a $1foo2bar vs $1 $+ foo123bar and $1$2 vs $1 $+ $2 and $3test and $1-x2 but $5test is null
   echo -a $!
-  echo -a This is a really long$&
+  echo -a This is a really long $&
     line that is broken up because $&
     mIRC supports it! The cool thing is $&
     that mIRC will also format these $&

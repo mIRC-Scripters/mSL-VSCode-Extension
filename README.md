@@ -7,7 +7,9 @@ This is a Visual Studio Code extension that adds support for mIRC Scripting Lang
 - Syntax highlighting
   - mIRC
   - AdiIRC (WIP)
-- Snippets (WIP)
+- Snippets
+  - Alias constructors (constants, commands, identifiers, and command and identifier)
+  - General on event constructor
 - Error reporting (WIP)
 
 ## Extension Settings
@@ -34,4 +36,3 @@ This project is made available under the MIT License.
 
 - Commands are restrcited to one line, i.e. **\$&** is ignored.
 - If/elseif/else/while must contain parentheses.
-- Matching text within event declarations cannot contain ":"
