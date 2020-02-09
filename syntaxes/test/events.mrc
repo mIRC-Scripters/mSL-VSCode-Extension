@@ -354,3 +354,22 @@ raw cap:* ls *:{ }
 raw authenticate:*:{ }
 ctcp *:test:?:ctcpreply $nick success
 ctcp *:version:?:ctcpreply $nick mIRC 12.5!!
+
+on *:ADMIN:#:echo -ag $nick just gave $admnick admin
+on *:CLIENTTEXT:*:*:echo -ag the client text was $1-
+on *:DEADMIN:#:echo -ag $nick just removed $admnick as admin
+on *:DOWNLOAD:adiirc:echo -ag Download of $download($download).file is complete.
+on *:mscroll:#:{
+  if ($window($active).mscrollpos == 1) {
+    echo -sg scrollbar for $active is at top
+  }
+  else if ($window($active).mscrollpos == $window($active).mscrollmax) {
+    echo -sg scrollbar for $active is at bottom
+  }
+}
+on *:OPTIONS:echo -ag Config file was reloaded
+on *:RESUME:echo -ag Computer is about to resume.
+on *:SONG:msg #channel I am now listening to $artist - $title
+on *:SUSPEND:echo -ag Computer is about to suspend.
+on *:UNZIP:*:echo -ag unzipped $zip($zip).src into $zip($zip).dest status: $iif($ziperr,fail,ok)
+on *:ZIP:*:echo -ag zipped $zip($zip).src into $zip($zip).dest status: $iif($ziperr,fail,ok)

@@ -51,3 +51,42 @@ Alias example5 {
   ;check if *!*@* in the ignore list for CTCPs:
   if (*!*@* isignore ctcp) echo yes
 }
+
+alias testing {
+  if (v1 == v2) noop
+  elseif (v1 < v2) noop
+  elseif (v1 > v2) noop
+  elseif (v1 <= v2) noop
+  elseif (v1 >= v2) noop
+  elseif (v1 // v2) noop
+  elseif (v1 \\ v2) noop
+  elseif (v1 & v2) noop
+  elseif (v1 isin v2) noop
+  elseif (v1 isincs v2) noop
+  elseif (v1 iswm v2) noop
+  elseif (v1 iswmcs v2) noop
+  elseif (v1 isnum v2) noop
+  elseif (v1 isletter v2) noop
+  elseif (v1 isalnum v2) noop
+  elseif (v1 isalpha v2) noop
+  elseif (v1 islower v2) noop
+  elseif (v1 isupper v2) noop
+  elseif (v1 === v2) noop
+  elseif (v1 ison v2) noop
+  elseif (v1 isop v2) noop
+  elseif (v1 ishop v2) noop
+  elseif (v1 isvoice v2) noop
+  elseif (v1 isreg v2) noop
+  elseif (v1 ischan v2) noop
+  elseif (v1 isban v2) noop
+  elseif (v1 isquiet v2) noop
+  elseif (v1 isaop v2) noop
+  elseif (v1 isavoice v2) noop
+  elseif (v1 isignore v2) noop
+  elseif (v1 isprotected v2) noop
+  elseif (v1 isnotify v2) noop
+  elseif (v1 isadmin v2) noop
+  elseif (v1 isowner v2) noop
+  elseif (v1 isquiet v2) noop
+  elseif (v1 isurl v2) noop
+}

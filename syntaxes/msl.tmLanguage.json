@@ -195,9 +195,9 @@
     "conditionals_content": {
       "patterns": [
         {
-          "comment": "Matches: == < > <= >= // \\ & isin isincs iswm iswmcs isnum isletter isalnum isalpha islower isupper === ison isop ishop isvoice isreg ischan isban isquiet isaop isavoice isignore isprotected isnotify",
+          "comment": "Matches: == < > <= >= // \\ & isin isincs iswm iswmcs isnum isletter isalnum isalpha islower isupper === ison isop ishop isvoice isreg ischan isban isquiet isaop isavoice isignore isprotected isnotify isadmin isowner isquiet isurl",
           "name": "keyword.operator.msl",
-          "match": "(?i)(!?(==?=?|(<|>)=?|\\/\\/|\\\\|&(?!&)|is(in(cs)?|wm(cs)?|(al)?num|letter|alpha|(low|upp)er|on|(a|h)?op|a?voice|reg|chan|ban|quiet|ignore|protected|notify))|(?<=\\()!)"
+          "match": "(?i)(!?(==?=?|(<|>)=?|\\/\\/|\\\\|&(?!&)|is(in(cs)?|wm(cs)?|(al)?num|letter|alpha|(low|upp)er|on|(a|h)?op|a?voice|reg|chan|ban|quiet|ignore|protected|notify|admin|owner|quiet|url))|(?<=\\()!)"
         },
         {
           "include": "#constants"
@@ -456,7 +456,7 @@
         {
           "comment": "Matches menu declaration.",
           "name": "meta.menu.code.msl",
-          "begin": "(?i)^(menu)\\x20+((?:status|channel|query|nicklist|menubar|@[^\\x20,]+|\\*)(?:,(?:status|channel|query|nicklist|menubar|@[^\\x20,]+))*|\\*)\\x20+{",
+          "begin": "(?i)^(menu)\\x20+((?:status|channel|query|nicklist|menubar|(?:channel)?link|@[^\\x20,]+|\\*)(?:,(?:status|channel|query|nicklist|menubar|(?:channel)?link|@[^\\x20,]+))*|\\*)\\x20+{",
           "beginCaptures": {
             "1": {
               "name": "storage.type.menu.msl"
@@ -484,7 +484,7 @@
         },
         {
           "comment": "Matches mouse sclick dclick uclick rclick lbclick leave and drop menu items",
-          "begin": "(?:^\\x20*|\\G)\\x20*(?:\\.+)?((?:mouse|(?:s|d|u|r|lb)click)|leave|drop)(?:\\x20*:\\x20*)?",
+          "begin": "(?:^\\x20*|\\G)\\x20*(?:\\.+)?((?:mouse|(?:s|d(?:r|m)?|u|r|lb|m)click)|leave|drop)(?:\\x20*:\\x20*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.menu.item.msl"
@@ -521,9 +521,9 @@
     "events": {
       "patterns": [
         {
-          "comment": "Matches events: action notice text",
+          "comment": "Matches events: action notice text clienttext",
           "name": "meta.event.code.msl",
-          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:action|notice|text):[^:]+:[^:]+:)\\s*",
+          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:action|notice|(?:client)?text):[^:]+:[^:]+:)\\s*",
           "beginCaptures": {
             "1": {
               "name": "entity.name.type.event.msl"
@@ -537,9 +537,9 @@
           ]
         },
         {
-          "comment": "Matches events: active input tabcomp",
+          "comment": "Matches events: active input tabcomp mscroll",
           "name": "meta.event.code.msl",
-          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:active|input|tabcomp):(?:\\*|#[^:]*|\\?|=|!|@[^:]*):)\\s*",
+          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:active|input|tabcomp|mscroll):(?:\\*|#[^:]*|\\?|=|!|@[^:]*):)\\s*",
           "beginCaptures": {
             "1": {
               "name": "entity.name.type.event.msl"
@@ -553,9 +553,9 @@
           ]
         },
         {
-          "comment": "Matches events: agent appactive connect connectfail disconnect dns exit load unload midiend mp3end playend songend waveend nick nosound notify unotify ping pong quit start usermode",
+          "comment": "Matches events: agent appactive connect connectfail disconnect dns exit load unload midiend mp3end playend songend waveend nick nosound notify unotify ping pong quit start usermode options resume song suspend",
           "name": "meta.event.code.msl",
-          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:agent|appactive|connect(?:fail)?|disconnect|dns|exit|(?:un)?load|(?:midi|mp3|play|song|wave)end|nick|nosound|u?notify|ping|pong|quit|start|usermode):)\\s*",
+          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:agent|appactive|connect(?:fail)?|disconnect|dns|exit|(?:un)?load|(?:midi|mp3|play|song|wave)end|nick|nosound|u?notify|ping|pong|quit|start|usermode|options|resume|song|suspend):)\\s*",
           "beginCaptures": {
             "1": {
               "name": "entity.name.type.event.msl"
@@ -569,9 +569,9 @@
           ]
         },
         {
-          "comment": "Matches events: ban unban help dehelp deop serverop op deowner owner devoice voice invite join kick servermode mode part rawmode topic",
+          "comment": "Matches events: ban unban help dehelp deop serverop op deowner owner devoice voice invite join kick servermode mode part rawmode topic admin deadmin",
           "name": "meta.event.code.msl",
-          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:(?:un)?ban|(?:de)?help|(?:de|server)?op|(?:de)?owner|(?:de)?voice|invite|join|kick|(?:server|raw)?mode|part|topic):(?:\\*|#[^:]*):)\\s*",
+          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:(?:un)?ban|(?:de)?help|(?:de|server)?op|(?:de)?owner|(?:de)?voice|invite|join|kick|(?:server|raw)?mode|part|topic|(?:de)?admin):(?:\\*|#[^:]*):)\\s*",
           "beginCaptures": {
             "1": {
               "name": "entity.name.type.event.msl"
@@ -585,9 +585,9 @@
           ]
         },
         {
-          "comment": "Matches events: chat ctcpreply error filercvd filesent getfail sendfail logon serv signal snotice sockclose socklisten sockopen sockread sockwrite udpread udpwrite vcmd wallops",
+          "comment": "Matches events: chat ctcpreply error filercvd filesent getfail sendfail logon serv signal snotice sockclose socklisten sockopen sockread sockwrite udpread udpwrite vcmd wallops download unzip zip",
           "name": "meta.event.code.msl",
-          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:chat|ctcpreply|error|file(?:rcvd|sent)|(?:get|send)fail|logon|serv|signal|snotice|sock(?:close|listen|open|read|write)|udp(?:read|write)|vcmd|wallops):[^:]+:)\\s*",
+          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:chat|ctcpreply|error|file(?:rcvd|sent)|(?:get|send)fail|logon|serv|signal|snotice|sock(?:close|listen|open|read|write)|udp(?:read|write)|vcmd|wallops|download|(?:un)?zip):[^:]+:)\\s*",
           "beginCaptures": {
             "1": {
               "name": "entity.name.type.event.msl"

@@ -12,13 +12,6 @@ This is a Visual Studio Code extension that adds support for mIRC Scripting Lang
   - General on event constructor
 - Error reporting (WIP)
 
-## Extension Settings
-
-This extension contributes the following settings:
-
-- `editor.autoIndent`: sets auto indentation for all `msl` related files to `true`
-- `editor.tabSize`: sets tab size to `2` for all `msl` related files
-
 ## Acknowledgements
 
 The grammar was built based on [highlightjs-mirc](https://github.com/highlightjs/highlightjs-mirc) project, lol2k's [vscode-mirc](https://github.com/lol2k/vscode-mirc) extension and Sreject's [language-mircscript](https://github.com/SReject/language-mircscript) project.

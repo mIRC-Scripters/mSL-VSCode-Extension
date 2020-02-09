@@ -36,7 +36,15 @@ menu channel,menubar,query,status {
   }
 }
 
-menu @pac_watch {
-  dclick:pacwatch_handle_click
-  sclick:pacwatch_handle_click
+menu * {
+  mouse: noop
+  sclick: noop
+  mclick: noop
+  dclick: noop
+  dmclick: noop
+  drclick: noop
+  uclick: noop
+  rclick: noop
+  leave: noop
+  drop: noop
 }
