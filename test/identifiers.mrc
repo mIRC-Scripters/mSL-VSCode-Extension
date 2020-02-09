@@ -40,6 +40,16 @@ alias identifiers {
   echo -a $away
   echo -a $awaymsg
   echo -a $awaytime
+  ; ADIIRC IDENTIFIERS
+  echo -a on *:ADMIN:*:echo -ag The nick opped is $admnick
+  echo -ag $adiircdir\Scripts
+  echo -a $adiircexe
+  echo -a $adiircini
+  echo -a Translation for 'Commands' is $adilang(Commands)
+  echo -a $album
+  echo -a $appbits
+  echo -a $artist
+  echo -a $audio
   ; B
   echo -a $banlist(#,0) - $banlist(#,1).by - $banlist(#,1).date - $banlist(#,1).ctime
   echo -a ON *:UNBAN:#: $chr(123) msg # Oh, look! $banmask was just removed from the channel banlist. $chr(125)
