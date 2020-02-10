@@ -188,6 +188,13 @@ alias identifiers {
   echo -a $eventid
   echo -a $exists(mirc.ini)
   echo -a ON *:EXIT:echo -a mIRC is $iif($exiting,$iif($exiting == 1,exiting,restarting),not exiting)
+  ; ADIIRC 'E' IDENTIFIERS
+  echo -a Print number of Editbox history items for the active window: $editboxhistory($active, 0)
+  echo -a Print number of emoticons: echo -ag $emoticons(0) - Hello $iif($emoticons(Hello), is, is not) an emoticon.
+  echo -a Generates encoding menu. Returns encodingname:/encoding encodingnumber: $encodingmenu(0) - $encodingmenu(1)
+  var %text $encrypt(Hello World, test) | echo -a Is deprecated in favor of the blowfish plugin...
+  if ($eventtarget(join, #) == 1) echo -s $nick joins #
+  var %output = $exec(cmd.exe, h, /c dir $qt($adiircdir))
   ; F
   echo -a $iif($isfile($mircexee) == $false,false,true)
   echo -a $feof
