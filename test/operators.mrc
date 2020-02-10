@@ -89,4 +89,8 @@ alias testing {
   elseif (v1 isowner v2) noop
   elseif (v1 isquiet v2) noop
   elseif (v1 isurl v2) noop
+  elseif (!%var) noop
+  elseif (!v1 == v2) noop
+  elseif (!$true) noop
+  elseif (!&test) noop
 }
