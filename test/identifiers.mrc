@@ -228,6 +228,11 @@ alias identifiers {
   echo -a $gettok(a-b-c-d-e,2,45) - The current month is $gettok($asctime,2,32)
   echo -a $gmt($ctime) is the same as $asctime($calc($ctime + $timezone  ) ) - $gmt is same as $calc( $ctime + $timezone )
   echo -a $group(0)
+  ; ADIIRC 'G' IDENTIFIERS
+  echo -a Returns the genre of the currently playing song: $genre
+  echo -a Returns the name of the first graphics card found: $gfx - Returns the name of the 2nd graphics card found: $gfx(2)
+  echo -a Returns the amount of vram in megabytes from the first graphics card found: $gfxram - Returns the amount of vram in megabytes from the 2nd graphics card found: $gfxram(2)
+  echo -a Returns your current idle time on all connections in seconds: $globalidle
   ; H
   echo -a $halted
   echo -a The hash is $hash(test,32)
