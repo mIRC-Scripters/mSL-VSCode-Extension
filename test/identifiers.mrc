@@ -163,6 +163,17 @@ alias identifiers {
   echo -a ON *:DNS:echo -a $iif($1,$iif($dns(1).nick,$v1 has been resolved to) Hostmask: $dns(1).addr IP: $dns(1).ip,Could not resolve DNS query.)
   echo -a $iif($dqwindow & 1,enabled,not enabled)
   echo -a $duration(38711810) - echo -a $duration(64wks 1hr 16mins 50secs)
+  ; ADIIRC 'D' IDENTIFIERS
+  echo -a $decrypt(%text, test) - deprecated
+  echo -a Returns total free disk space from all drives in human readable format: $diskfree
+  echo -a Used to generate disk menu. Returns Driveletter (Diskname) freespace/totalspace:/diskinfo driveletter - $diskmenu(1) - returns number of disks : $diskmenu(0) - deprecated
+  echo -a Returns total disk space from all drives in human readable format: $disktotal
+  echo -a Returns main window docked status. (Left/Right/Top/Bottom/None): $dock
+  echo -a Returns $true if any dockpanel is visible except Treebar, otherwise $false : $dockpanels
+  echo -a Higlight is $iif($dockpanels(Highlight), Visible, Hidden)
+  echo -a Returns the .NET (dotnet) version AdiIRC is currently running on: $dotnet
+  echo -a Returns the download name during a on DOWNLOAD event: $download - Number of downloads: $download(*,0)
+  echo -a on *:DOWNLOAD:*:echo -ag Download of $download($download).url was $iif($downloaderr,not ok,ok)
   ; E
   echo -a $ebeeps
   echo -a $editbox(Status Window) - Selection start: $editbox(Status Window).selstart --- Selection end: $editbox(Status Window).selend
