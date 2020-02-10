@@ -218,6 +218,9 @@ alias identifiers {
   echo -a $fulldate
   echo -a $fullname
   echo -a $fullscreen
+  ; ADIIRC 'F' IDENTIFIERS
+  echo -a Returns the mpeg frequency of the currently playing song: $frequency
+  echo -a Returns the full title of the currently playing song, usually in $artist - $title format: $fulltitle
   ; G
   echo -a $get(0) - echo -a $get(3).pc
   echo -a on *:FILESENT:*:if ($getdir($filename) == $nofile($filename)) echo -a Note: $filename was sent from the DCC GET folder for that filename.
