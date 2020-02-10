@@ -299,9 +299,19 @@ alias identifiers {
   echo -a $istokcs(hello HELLO hEllO,hEllO,32) - $istokcs(hello HELLO HELLo,helLO,32)
   echo -a $isupper(ABCDEFG) - $isupper(ABCDEFg)
   echo -a $isutf(é) $isutf($utfencode(é)) $isutf(plain)
+  ; ADIIRC 'I' IDENTIFIERS
+  echo -a on *:TEXT:*:*:echo -ag The ident of the user is $ident
+  echo -a $inick(0)
+  echo -a Insert 'wo' at position 6: $insert(hello rld, wo, 6)
+  echo -a Used to generate invite menu. Returns 'Invite nick to channel:/invite nick channel' $invitemenu(N)
+  echo -a There are $ircv3caps(0) caps available, the first one is $ircv3caps(1) and $iif($ircv3caps(1).enabled, it's, it's not) enabled
+  echo -a Program $iif($iswine,is,is not) running in Wine.
   ; K
   echo -a on *:KEYDOWN:@:*:echo User pressed key $keyval , keychar $keychar in $active (key repeating: $keyrpt $+ )
   echo a- on *:KICK:#:.notice $knick You were kicked from $chan by $nick for the following reason: $iif($1-,$1-,No reason given)
+  ; ADIIRC 'K' IDENTIFIERS
+  echo -a $kblayout
+  echo -a Caps lock is $iif($keylocked(CapsLock), on, off)
   ; L
   echo -a on *:ACTIVE:*:echo -a * Active window is now $active $+ . Previous active window was $lactive
   echo -a $lactivecid - $lactivewid
