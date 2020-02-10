@@ -119,6 +119,17 @@ alias identifiers {
   echo -a $ctime - $ctime(Thursday 2003-01-09 21:16)
   echo -a The timer name was: $ctimer (timer name that returns is always lowercase)
   echo -a ON *:INPUT:*:echo -a $ctrlenter
+  ; ADIIRC 'C' IDENTIFIERS
+  echo -a Accurate result for extremely large integers: $calcint( ((2 ^ 256) - 1) * ((2 ^ 256) +1) )
+  echo -a Returns the calling alias for the current script: $calias - $calias(2).fname
+  echo -a Returns the comment field of the currently playing song: $comment
+  echo -a Returns cpu cache in bytes for 1 core: $cpucache
+  echo -a Returns numbers of cpu's and cores: $cpucount
+  echo -a Returns cpu identifier: $cpuident
+  echo -a Returns current cpu load in percentage: $cpuload - the current load for the 3rd core is $cpuload(3)
+  echo -a Returns cpu frequency in megahertz: $cpumhz
+  echo -a Returns cpu name: $cpuname
+  echo -a Returns cpu vendor identifier: $cpuvendor
   ; D
   echo -a $date - $date(1234567890,yyyy-mm)
   echo -a $day
