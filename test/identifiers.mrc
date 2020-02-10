@@ -40,7 +40,7 @@ alias identifiers {
   echo -a $away
   echo -a $awaymsg
   echo -a $awaytime
-  ; ADIIRC IDENTIFIERS
+  ; ADIIRC 'A' IDENTIFIERS
   echo -a on *:ADMIN:*:echo -ag The nick opped is $admnick
   echo -ag $adiircdir\Scripts
   echo -a $adiircexe
@@ -63,6 +63,22 @@ alias identifiers {
   echo -a ON *:BAN:#: $chr(123) if ($bnick) $chr(123) msg # Looks like $bnick has been banned. $chr(125) $chr(125)
   bset -ta &var 1 chlo $+ $chr(232) / $utfencode(chlo $+ $chr(232) )  | echo -a $bvar(&var,1-) // $bvar(&var,1-).text
   echo -a $bytes(317889213,b) - $bytes(10000000000,g).suf
+  ; ADIIRC 'B' IDENTIFIERS
+  echo -a True if running on battery: $battery - If running on bettery, returns percentage left otherwise 100: $batteryp
+  echo -a Returns the bitrate of the currently playing song: $bitrate
+  echo -a Returns the toolbar button name during a menu event: $bname
+  echo -a Returns true if 'Make certain part of messages bold' is enabled: $boldify - $boldify(I am bold)
+  echo -a Returns the date the AdiIRC version was built in YYYY/MM/DD format: $builddate
+  echo -a Returns current download bandwidth speed in human readable format on selected network adapter: $bwdown
+  echo -a Returns current download bandwidth speed in bytes on selected network adapter: $bwdownb
+  echo -a Return network adapter name of the network adapter to monitor bandwidth, if no network adapter is defined, returns $null : $bwname
+  echo -a Returns numbers of bytes received in human readable format on selected network adapter: $bwrec
+  echo -a Returns numbers of bytes received in byte format on selected network adapter: $bwrecb
+  echo -a Returns numbers of bytes sent in human readable format on selected network adapter: $bwsent
+  echo -a Returns numbers of bytes sent in byte format on selected network adapter: $bwsentb
+  echo -a Returns the connection (LAN) speed on selected network adapter: $bwspeed
+  echo -a Returns current upload bandwidth speed in human readable format on selected network adapter: $bwup
+  echo -a Returns current upload bandwidth speed in bytes on selected network adapter: $bwupb
   ; C
   echo -a $calc(3 + 5)
   echo -a $calc(3 * 4 * (3 + 5)))
