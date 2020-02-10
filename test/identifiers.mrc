@@ -333,6 +333,13 @@ alias identifiers {
   echo -a $longip(158.152.50.239) - $longip(2660774639)
   echo -a $lower(testÕ)
   timer $+ $rand(11111,99999) 1 1 noop | echo -a $ltimer
+  ; ADIIRC 'L' IDENTIFIERS
+  echo -a Returns connection lag to current active IRC server in milliseconds: $lag
+  echo -a Returns the last quit message sent to the associated server: $lquitmsg
+  echo -a Returns the mpeg layer of the currently playing song: $layer
+  echo -a Returns the length of the currently playing song in XX:XX format: $length
+  echo -a Lineheight for Consolas 10 is $lineheight(Consolas, 10)
+  echo -a Return a list of all nicks in the channel: $loop(1, $nick(#, 0), $nick(#, \1))
   ; M
   echo -a on *:text:*:#:echo -a $maddress - $maddress(*,1)
   echo -a $mask(nick!user@host,7)
