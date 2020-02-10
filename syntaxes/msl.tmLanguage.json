@@ -197,7 +197,7 @@
         {
           "comment": "Matches: == < > <= >= // \\ & isin isincs iswm iswmcs isnum isletter isalnum isalpha islower isupper === ison isop ishop isvoice isreg ischan isban isquiet isaop isavoice isignore isprotected isnotify isadmin isowner isquiet isurl",
           "name": "keyword.operator.msl",
-          "match": "(?i)(!?(==?=?|(<|>)=?|\\/\\/|\\\\|&(?!&)|is(in(cs)?|wm(cs)?|(al)?num|letter|alpha|(low|upp)er|on|(a|h)?op|a?voice|reg|chan|ban|quiet|ignore|protected|notify|admin|owner|quiet|url))|(?<=\\()!)"
+          "match": "(?i)((?<=\\x20)!?(?:==?=?|(?:<|>)=?|\\/\\/|\\\\|&|is(?:in(?:cs)?|wm(?:cs)?|(?:al)?num|letter|alpha|(?:low|upp)er|on|(?:a|h)?op|a?voice|reg|chan|ban|quiet|ignore|protected|notify|admin|owner|quiet|url))(?=\\x20|\\))|(?<=\\()!)"
         },
         {
           "include": "#constants"
