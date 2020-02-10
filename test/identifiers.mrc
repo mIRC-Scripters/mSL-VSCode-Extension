@@ -255,6 +255,8 @@ alias identifiers {
   ; $hregex --> $hfind
   hadd -m test testkey testvalue | echo -a key: $hregex(test,/.*(es).*/,1) | hfree test
   var %a 3 | var %b 4 | echo -a $hypot(%a,%b) is the same as $sqrt( $calc( %a ^2 + %b ^2 ) )
+  ; ADIIRC 'H' IDENTIFIERS
+  echo -a Converts a hex color into $rgb decimal format: echo -ag $hexcolor(FF0000) - returns in rrr,ggg,bbb value: $hexcolor(FF0000).rgb
   ; I
   echo -a on *:dns:echo -a $iaddress
   echo -a IAL is: $ial - $ial(*,0)
