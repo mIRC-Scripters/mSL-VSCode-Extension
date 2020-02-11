@@ -93,4 +93,6 @@ alias testing {
   elseif (!v1 == v2) noop
   elseif (!$true) noop
   elseif (!&test) noop
+  elseif (v1 !== v2) noop
+  elseif (v1 !=== v2) noop
 }
