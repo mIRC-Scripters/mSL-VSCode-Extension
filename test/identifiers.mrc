@@ -575,6 +575,12 @@ alias identifiers {
   echo -a $treebar
   echo -a $iif($isfile($mircexe) == $true,true,false)
   echo -a $trust(0)
+  ; ADIIRC 'T' IDENTIFIERS
+  echo -a Returns the title of the currently playing song: $title
+  echo -a on *:TOPIC:#:echo -ag Topic was changed to $topic in channel #
+  echo -a Text is $topicbox($active) selstart is $topicbox($active).selstart selend is $topicbox($active).selend
+  echo -a Returns the total track count of the currently selected playlist: $totaltracks
+  echo -a Returns the track number of the currently playing song: $track
   ; U
   echo -a ON *:TEXT:*:#:echo -a User level triggered: $ulevel
   echo -a $ulist(*,,0)
