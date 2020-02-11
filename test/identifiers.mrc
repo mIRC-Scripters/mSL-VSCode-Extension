@@ -397,6 +397,10 @@ alias identifiers {
   echo -a raw *:*:echo -a $numeric
   echo -a $numtok(a-b-c-d-e,45) - $numtok(x1xxxx2x3x4x,120) - $numtok(1x2X3x4,120)
   echo -a $nvnick($chan,1)
+  ; ADIIRC 'N' IDENTIFIERS
+  echo -a There is $nadmnick(#,0) non admin users - First non admin nick is $nadmnick(#,1)
+  echo -a Returns $true if Nickcolumn is enabled, otherwise $false - $nickcolumn
+  echo -a There is $nonick(#,0) non owner users - First non owner nick is $nonick(#,1)
   ; O
   echo -a You clicked: $iif($input(Click ok to see the result.,ov) == $ok,ok)
   echo -a $online - $onlineserver - $onlinetotal
