@@ -370,6 +370,15 @@ alias identifiers {
   echo -a $msfile( $sysdir(profile)  ) / $sfstate / $msfile(0) / $msfile(1)
   echo -a $asctime($msgstamp, "[HH:nn:ss]") $text
   echo -a $msgtags(0)
+  ; ADIIRC 'M' IDENTIFIERS
+  echo -a Returns free ram in megabytes format: $memfree
+  echo -a Returns free ram in percentage format: $memfreep
+  echo -a Returns total amount of installed ram in megabytes format: $memtotal
+  echo -a Adds a icon to a menu item: $menuicon($adiircexe,1)
+  echo -a Returns the motherboard manufacturer and version name: $motherboard
+  echo -a Returns $1- in a consecutive spaced line. Same as $parms : $msgx
+  echo -a Returns $true if event sounds are muted from /mute otherwise $false : $muted
+  echo -a Returns the mpeg version of the currently playing song: $mversion
   ; N
   echo -a on *:dns: echo -a $naddress
   echo -a Nick in on event: $nick - Total users: $iif($active ischan,$nick(#,0))
