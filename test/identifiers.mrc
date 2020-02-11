@@ -409,6 +409,19 @@ alias identifiers {
   echo -a $or(14,27) - 31
   echo -a $ord(3)
   echo -a $os
+  ; ADIIRC 'O' IDENTIFIERS
+  echo -a Returns the Nth color index of the internal color list as a $rgb value: Get the Editbox color: Editbox color is $ocolor(30).rgb
+  echo -a on *:OWNER:*:echo -ag The nick opped is $onick - There is $onick(#,0) owner users
+  echo -a Returns "32" on 32 bit windows, and "64" on 64 bit version of windows: $osbits
+  echo -a Returns the windows build number: $osbuild
+  echo -a Returns the windows edition: $osedition
+  echo -a Returns number of seconds since last keystroke or mouse movement: $osidle
+  echo -a Returns the date windows was installed in unix timestamp format: $osinstalldate
+  echo -a Returns the major windows version number: $osmajor
+  echo -a Returns the minor windows version number: $osminor
+  echo -a Returns the name of the windows version. (Windows 7, Windows 8 etc): $osname
+  echo -a Returns the windows service pack version: $osservicepack
+  echo -a Returns the version number of the operating system: $osversion
   ; P
   echo -a $len($1-) -- $len($parms)
   echo -a on *:parseline:*:*:echo -a $parseline - $parsetype - $parseutf
