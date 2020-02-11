@@ -535,6 +535,24 @@ alias identifiers {
   echo -a Used in a menu definition: $submenu($id($1))
   echo -a $switchbar
   echo -a $sysdir(music)
+  ; ADIIRC 'S' IDENTIFIERS
+  echo -a Returns the name of the first screen found: $screen - Print number of screens $screen(0) - Print the name of the first screen found: $screen(1)
+  echo -a Returns the bit depth of the first screen found: $screenb - Print the bith depth of the first screen found: $screenb(1)
+  echo -a Returns the height of the first screen found: $screenh - Print the height of the first screen found: $screenh(1)
+  echo -a Returns the refresh rate of the first screen found: $screenhz - Print the refresh rate of the first screen found: $screenhz(1)
+  run $qt($screenshot(screenshot.png, pa))
+  echo -a Returns the width of the first screen found: $screenw - Print the width of the first screen found: $screenw(1)
+  echo -a Returns $true if /scripts is enabled, otherwise $false : $scripts
+  echo -a $iif($servervars(CHANTYPES),channel types for this server is $servervars(CHANTYPES),channel types was not found)
+  echo -a $sha2(Hello world,0,1) - deprecated
+  echo -a Returns the filesize of the currently playing song: $size
+  echo -a Used to generate slaps menu. Returns slaptext:/slap nick N - $slapsmenu(0, nick)
+  echo -a Returns the full title of the currently playing song, usually in $artist - $title format : $song
+  echo -a Returns the full file path of the currently playing song: $songpath
+  echo -a $spellcheck(wrod, 1)
+  echo -a Returns the SHA1 hash of the remote certificate used by the current server: $sslcertremotesha1
+  echo -a Returns the SHA256 hash of the remote certificate used by the current server: $sslcertremotesha256
+  echo -a Returns $true if Statusbar is visible, otherwise $false : $statusbar - $statusbar(1).name
   ; T
   echo -a There are 2x pi radians in a circle, so a radian is $calc(360 / (2*$pi) ) degrees
   var %i 30 | echo -a $tan(%i).deg is the same as $tan( $calc(%i * $pi / 180) ) except for rounding
