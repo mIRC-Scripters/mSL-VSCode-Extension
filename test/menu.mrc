@@ -48,3 +48,9 @@ menu * {
   leave: noop
   drop: noop
 }
+
+menu @custom_window {
+ Test
+ .Nothing:noop
+ .Nothing2: { noop }
+}
