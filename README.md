@@ -2,6 +2,10 @@
 
 This is a Visual Studio Code extension that adds support for mIRC Scripting Language.
 
+## Preview
+
+![Preview](preview.gif)
+
 ## Features
 
 - Syntax highlighting
