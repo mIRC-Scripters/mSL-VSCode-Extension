@@ -484,6 +484,11 @@ alias identifiers {
   echo -a $right(abcdefg, 4) - defg
   echo -a $rnick($chan,0)
   echo -a $round(4.98472,3)
+  ; ADIIRC 'R' IDENTIFIERS
+  echo -a Returns random colors option as bitflag: 0 = Off, 1 = Message, 2 = Nicklist - Random colors $iif($randomcolors & 1, is, is not) enabled for messages!
+  echo -a Returns the track rating (**---) of the currently playing song: $rating
+  echo -a Returns raw server line for events: $rawmsgx (Same as $rawmsg but as consecutive spaced line.)
+  echo -a Returns your "Real Name" on the current active connection: $realname 
   ; S
   echo -a This returns $true $samepath( $mircexe , $nopath($mircexe) )
   echo -a $scid(0)
