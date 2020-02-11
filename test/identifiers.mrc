@@ -437,6 +437,21 @@ alias identifiers {
   echo -a $prop
   echo -a $protect
   echo -a $puttok(a-b-c-d-e-f,TEST,3,46)) - a-b-TEST-d-e-f
+  ; ADIIRC 'P' IDENTIFIERS
+  echo -a Returns $true if $regex() supports pcre and if it's enabled and the proper visual c++ libraries are installed, otherwise $false : $pcre
+  echo -a Returns the percent left of the currently playing song: $percentl
+  echo -a Returns the percent played of the currently playing song: $percentp
+  echo -a Returns the play counter of the currently playing song: $playcount
+  echo -a Returns the current selected media player: $player
+  echo -a Returns the window handle to the current running media player: $playerhandle
+  echo -a Returns information about running plugins: $plugins(0) - $plugins(1).name
+  echo -a Returns the playlist position of the currently playing song: $position
+  echo -a $powmod(2,111,1907) same as $calcint( (2^111) % 1907)
+  echo -a Returns the CTCP message prefix format from Options -> Messages -> Prefix Ctcp: $prefixctcp
+  echo -a Returns the emote message prefix format from Options -> Messages -> Prefix Emote: $prefixemote - $prefixemote(#,$me)
+  echo -a Returns the system message prefix format from Options -> Messages -> Prefix System: $prefixsys
+  echo -a Returns the user message prefix format from Options -> Messages -> Prefix User: $prefixuser - $prefixuser(#,$me)
+  echo -a Returns a text progress bar (**---) of the currently playing song: $progress
   ; Q
   var %ini $qt($mircini) | echo -a %ini | echo -a $qt(%ini)
   echo -a $query(0)
