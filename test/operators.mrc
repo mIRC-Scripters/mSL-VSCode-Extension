@@ -3,6 +3,9 @@ alias example {
   ;5 * 5 = 25
   %x = %x * 5
   echo -a %x
+  
+  var %z $calc(-600 - -100 + 50 * 4000 / 11 ^ 10 + $calc(4-2+100))
+  echo -a %z
  
   ;remainder of 25 / 9 = 7
   var %y = %x % 9
