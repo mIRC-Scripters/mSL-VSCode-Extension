@@ -591,6 +591,12 @@ alias identifiers {
   echo -a $urlget(https://github.com/solbu/Peace-and-Protection/archive/v4.22.8.zip ,gf,peace-and-protection-v4-22-8.zip,noop)
   echo -a $usermode
   echo -a $utfdecode(Ã©) - $utfencode(é)
+  ; ADIIRC 'U' IDENTIFIERS
+  echo -a Days since computer was last (re)started: $updays
+  echo -a Returns $true if AdiIRC is updating itself, otherwise $false : $updating
+  echo -a Hours since computer was last (re)started: $uphours
+  echo -a Minutes since computer was last (re)started: $upmins
+  echo -a Returns the username set in Server list or specified in the /server command for current connection: $username
   ; V
   if (a != b) echo -a $v1 - $v2
   echo -a $var(%myscript*,0)
