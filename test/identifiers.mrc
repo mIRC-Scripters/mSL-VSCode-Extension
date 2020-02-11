@@ -455,6 +455,9 @@ alias identifiers {
   ; Q
   var %ini $qt($mircini) | echo -a %ini | echo -a $qt(%ini)
   echo -a $query(0)
+  ; ADIIRC 'Q' IDENTIFIERS
+  echo -a Returns a random quit message if enabled, otherwise the default quit message: $quitmessage
+  echo -a Returns $true if the quick connect dialog is shown on start up, otherwise $false : $quickconnect
   ; R
   echo -a Do I wish to answer that? $iif(1 == $rand(0,1),yes,no - random upper case from A through Z: $r(A,Z)
   var %i 999999 , %t $ticks | while (%i) { noop $rands(0,999999999) | dec %i } | echo -a ms: $calc($ticks - %t)
