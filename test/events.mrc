@@ -16,6 +16,15 @@ on 5:NOTICE:*op #*:?:{
 on *:NOTICE:This nickname is registered*:TheUsualNick:{
   if ($nick == NickServ) { ns identify M`/p@SsW0r|) }
 }
+
+alias -l channel { return #test }
+ON *:TEXT:!nothing:$($channel): { noop }
+ON *:ACTION:!nothing:$($channel): { noop }
+ON *:NOTICE:!nothing:$($channel): { noop }
+
+ON *:TEXT:!nothing2:%channels: { noop }
+ON *:TEXT:!nothing3:#channel1,#channel2,#channel3: { noop }
+
 on *:text:!help:#:{
   notice $nick For Help just state your question and pastebin any relevant code.
 }
@@ -169,7 +178,6 @@ ON ^*:RAWMODE:*: {
   echo $target * RAWMODE: $1-
   haltdef
 }
-ON *:TOPIC:#:action $chan approves of this new topic!
 ON *:TOPIC:#:action $chan approves of this new topic!
 ON *:CHAT:!time:msg =$nick The current time is: $time(hh:nntt)
 ON *:CTCPREPLY:VERSION*:echo -a $nick $+ 's IRC client is: $1-
@@ -333,6 +341,8 @@ on *:parseline:out:PRIVMSG & ?Hello?:echo -a $parseline
 on *:parseline:out:$(PRIVMSG & :Hello?):echo -a $parseline
 on $*:parseline:out:/^PRIVMSG [^ ]+ :Hello./:echo -a $parseline
 
+raw *:*: { echo -a Numeric: $numeric - Parameters: $1- }
+
 raw 319:*:{
   ; $1 = <myname>
   ; $2 = <nick>
@@ -350,7 +360,7 @@ raw 319:*:{
   } 
 }
 raw cap:* ack sasl *:{ }
-raw cap:* ls *:{ }
+RAW CAP:LS *:echo -ag CAP prefixes on this server are $1-
 raw authenticate:*:{ }
 ctcp *:test:?:ctcpreply $nick success
 ctcp *:version:?:ctcpreply $nick mIRC 12.5!!
