@@ -605,6 +605,10 @@ alias identifiers {
   echo -a $version
   echo -a ON *:VOICE:#:echo -a $vnick
   echo -a $vol(master)
+  ; ADIIRC 'V' IDENTIFIERS
+  echo -a Returns the volume in percent of the current selected media player: $volume
+  echo -a Returns a text volume bar (**---) of the currently selected media player: $volumeb
+  echo -a Returns the volume in percent of the current selected media player: $volumep
   ; W
   echo -a $wavedir - has been replaced by $!sound(wave)
   echo -a $wid
@@ -614,10 +618,16 @@ alias identifiers {
   echo -a $wildtokcs(one two three twO, t*O,1,32) - returns twO
   echo -a $window - $window(0)
   echo -a $wrap($1-,verdana,10,$calc(%w - 10),1,%a)
+  ; ADIIRC 'W' IDENTIFIERS
+  echo -a Prints the cpu l2 cache: $wmiquery(SELECT * FROM Win32_Processor, L2CacheSize)
   ; X
   echo -a $xor(21,9) - returns 28
   ; Y
   echo -a $iif($input(Click yes to see the result.,yv) == $yes,yes,no)
+  ; ADIIRC 'Y' IDENTIFIERS
+  echo -a Returns the year of the currently playing song: $year
   ; Z
   echo -a $zip(test.zip,cp,testdir\test1.txt,foo bar)
+  ; ADIIRC 'Z' IDENTIFIERS
+  echo Returns any errors of a zip/unzip operation during a on ZIP or on UNZIP event: $ziperr
 }
