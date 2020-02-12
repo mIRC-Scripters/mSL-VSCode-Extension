@@ -280,4 +280,99 @@ alias -l commands {
   timeapi on
   username newUsername
   cmd +l -x xd
+  ; ADIIRC COMMANDS
+  aclear -nq
+  advertise 
+  allnick Obiwan
+  autoconnect on
+  aquit See you guys later!
+  back
+  banlist
+  betaup
+  bin2txt 0100100001100101011011000110110001101111001000000101011101101111011100100110110001100100
+  bw 
+  channels -a #test
+  charset 65001
+  config -t Messages
+  cycleall 2000 Be right back in 2 seconds.
+  dehalfop Nick1 Nick2 Nick3
+  deop Nick1 Nick2 Nick3
+  desop Nick1 Nick2 Nick3
+  devoice Nick1 Nick2 Nick3
+  dock -o
+  dockpanels -tSpnhoudi on
+  download adiirc https://adiirc.com/setup64.exe setup.exe
+  echomonitor -ht Some text
+  echox -a %var
+  edit -s
+  encoding -1
+  fakeraw :Nick!Ident@host.com PRIVMSG #channel :This is a fake message
+  fget on
+  fullscreen on
+  gcmem
+  globalkeys -d Ctrl+D
+  google -p -t #channel adiirc
+  halfop Nick1 Nick2 Nick3
+  highlight on
+  icon -c C:\Users\User\Pictures\icon1.ico
+  inick off
+  inlineimage -a C:\Users\user\Pictures\image.jpg
+  kblayout -d
+  lag
+  linemarker -g
+  lock -r
+  logs -dr "c:\logs folder" .*Hello.*
+  msgbox This is sample text
+  mute on
+  nextunread -m
+  nickcolumn -r
+  nicklist -l #channel
+  nmsg NordicIRC #channel Hello world
+  np [Nick]
+  oline Nick c:\Pictures\icon1.png
+  options -t "Quick Connect" join
+  paths -o
+  pause 4
+  pgoogle -n5 Star wars
+  plugins -i C:\User<\Nick\Desktop\MyPlugin.dll
+  priv Nick Hello world
+  quickconnect
+  quicksave -a
+  rawx %text
+  rawlog -t
+  realname Roger Rabbit
+  reconnect Message
+  refreshsong
+  rejoin
+  resolve 8.8.8.8
+  restart
+  scripts on
+  scrolltext -u5 #channel
+  search -r .*Hello.*
+  sendkeys {CAPSLOCK}
+  serverlist -n freenode
+  setconfig Messages UseTimestamp False
+  setoption Messages UseTimestamp False
+  showadiirc -n
+  showmenu -c #test 42 42
+  slap Nick
+  sleep 5 /join #channel1,#channel2
+  sop Nick1 Nick2 Nick3 
+  statusbar on
+  tab NordicIRC #channel
+  themes
+  topicbox -h #channel
+  usernick Obiwan
+  txt2bin Hello World
+  unban Nick
+  unignore Nick!*@*
+  unnotify Nick
+  updatenlvars
+  viewlog -n10 filename.log
+  voice Nick1 Nick2 Nick3
+  wdown
+  wjump 10
+  wnext
+  wpause
+  wlpay
 }
