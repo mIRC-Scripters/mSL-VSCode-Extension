@@ -367,7 +367,8 @@ alias -l commands {
   unban Nick
   unignore Nick!*@*
   unnotify Nick
-  updatenlvars
+  update
+  vars
   viewlog -n10 filename.log
   voice Nick1 Nick2 Nick3
   wdown
