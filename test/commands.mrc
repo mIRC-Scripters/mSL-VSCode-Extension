@@ -375,5 +375,5 @@ alias -l commands {
   wjump 10
   wnext
   wpause
-  wlpay
+  wplay
 }
