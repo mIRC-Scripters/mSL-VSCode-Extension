@@ -2,7 +2,8 @@
 
 All notable changes to the "msl" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how
+to structure this file.
 
 ## [Released]
 
@@ -10,7 +11,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 #### Added
 
-- Syntax Highlighting support for AdiIRC commands, events, identfiers, dialogs, menus, and groups
+- Syntax Highlighting support for AdiIRC commands, events, identfiers, dialogs,
+  menus, and groups
 - Diagnostic messages for mIRC deprecated identifiers
 
 #### Changed
@@ -27,10 +29,21 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+### [v0.2.1]
+
+#### Added
+
+- markdownlint.json to allow multiple headings on this file
+
+#### Changed
+
+- Single line comment regex to match on linguist
+
 ### [v0.1.0] 2/6/2020
 
 #### Added
 
-- Syntax Highlighting support for mIRC commands, events, identfiers, dialogs, menus, and groups
+- Syntax Highlighting support for mIRC commands, events, identfiers, dialogs,
+  menus, and groups
 - Alias constructors (constants, commands, identifiers, and command and identifier)
 - General on event constructor

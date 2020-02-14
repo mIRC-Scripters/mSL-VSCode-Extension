@@ -85,7 +85,7 @@
         {
           "comment": "Matches a single line comment.",
           "name": "comment.line.semicolon.msl",
-          "begin": "(?<=(?:\\G|\\x20\\|\\x20|^))(?:\\x20*);",
+          "begin": "(?<=\\G|\\x20\\|\\x20|^)(?:\\x20*);",
           "end": "(?=\\z|\\x20+\\|\\x20+[^\\s]|\\x20}|$)"
         }
       ]
