@@ -18,7 +18,10 @@ This is a Visual Studio Code extension that adds support for mIRC Scripting Lang
 
 ## Acknowledgements
 
-The grammar was built based on [highlightjs-mirc](https://github.com/highlightjs/highlightjs-mirc) project, lol2k's [vscode-mirc](https://github.com/lol2k/vscode-mirc) extension and Sreject's [language-mircscript](https://github.com/SReject/language-mircscript) project.
+The grammar was built based on
+[highlightjs-mirc](https://github.com/highlightjs/highlightjs-mirc) project,
+lol2k's [vscode-mirc](https://github.com/lol2k/vscode-mirc) extension and
+Sreject's [language-mircscript](https://github.com/SReject/language-mircscript) project.
 
 Some test/examples were taken from: <https://en.wikichip.org/wiki/mirc>
 

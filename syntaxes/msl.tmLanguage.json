@@ -382,7 +382,7 @@
         {
           "comment": "Possible custom identifier",
           "name": "support.function.name.msl",
-          "match": "(?<=\\s|\\(!|\\(|\\,|\\.|^)(\\$\\$?~?[^\\s(),]+)(?=\\b)"
+          "match": "(?<=\\s|\\(!|\\(|\\,|\\.|^)(\\$\\$?(?!\\x21)[^\\s(),]+)(?=\\b)"
         }
       ]
     },
