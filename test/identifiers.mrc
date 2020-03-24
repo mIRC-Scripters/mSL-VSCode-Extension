@@ -467,6 +467,7 @@ alias identifiers {
   echo -a $readini($mircini,n,chanfolder,n0)
   noop $read($mircini,tnw,*mirc*) | echo -a $readn
   echo -a $regex($str(a,2700),/(?<=a*)/) $regerrstr
+  echo -a $regex(test,%test)
   echo -a $regex(abcd,/[a-z]/g) $regex(test,This is a test message,/(is|es)/g) $regml(test,0) - $regmlex(test,4,1)
   var %a | echo -a $regsub(abcd,/[a-z]/g,1,%a)
   var %a | echo -a $regsubex(abcd,/([a-z])/g,-\n \1-)

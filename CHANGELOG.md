@@ -43,6 +43,17 @@ to structure this file.
 
 ## [Unreleased]
 
+### [v0.2.2]
+
+#### Added
+
+- Highlight support for regex
+
+#### Changed
+
+- Fixed on event snippet
+- Fixed goto points marked as custom commands
+
 ### [v0.1.0] 2/6/2020
 
 #### Added

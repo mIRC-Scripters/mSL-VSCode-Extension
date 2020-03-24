@@ -14,6 +14,7 @@ This is a Visual Studio Code extension that adds support for mIRC Scripting Lang
 - Snippets
   - Alias constructors (constants, commands, identifiers, and command and identifier)
   - General on event constructor
+  - Miscellaneous
 - Error reporting (WIP)
 
 ## Acknowledgements
