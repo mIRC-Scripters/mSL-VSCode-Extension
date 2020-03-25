@@ -497,7 +497,7 @@
         },
         {
           "comment": "Matches mouse sclick dclick uclick rclick lbclick leave and drop menu items",
-          "begin": "(?:^\\x20*|\\G)\\x20*(?:\\.+)?((?:mouse|(?:s|d(?:r|m)?|u|r|lb|m)click)|leave|drop)(?:\\x20*:\\x20*)?",
+          "begin": "(?:^\\s*|\\G)\\x20*((?:mouse|(?:s|d(?:r|m)?|u|r|lb|m)click)|leave|drop)(?:\\x20*:\\x20*)?",
           "beginCaptures": {
             "1": {
               "name": "keyword.other.menu.item.msl"
@@ -512,7 +512,7 @@
         },
         {
           "comment": "Matches menu items",
-          "begin": "^\\x20*",
+          "begin": "^\\x20*(?!$)",
           "end": "(?=\\z|\\x20}|$)",
           "patterns": [
             {
