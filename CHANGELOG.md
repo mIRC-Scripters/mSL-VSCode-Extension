@@ -54,7 +54,13 @@ to structure this file.
 
 ## [Unreleased]
 
-### [v0.2.3]
+### [v0.2.3] 3/26/2020
+
+#### Added
+
+- Default configuration: tab inserts spaces, tab size is 2, and auto indents
+
+#### Changed
 
 - Fixed empty menu line
 

@@ -19,6 +19,13 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"configurationDefaults": {
+			"[msl]": {
+				"editor.autoIndent": "full",
+				"editor.tabSize": 2,
+				"editor.insertSpaces": true
+			}
+		},
 		"languages": [
 			{
 				"id": "msl",
