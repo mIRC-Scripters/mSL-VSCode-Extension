@@ -49,6 +49,10 @@
 		"snippets": [
 			{
 				"language": "msl",
+				"path": "./snippets/commands.json"
+			},
+			{
+				"language": "msl",
 				"path": "./snippets/tools.json"
 			}
 		]

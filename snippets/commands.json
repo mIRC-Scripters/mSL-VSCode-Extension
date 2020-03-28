@@ -1,0 +1,122 @@
+{
+    "abook": {
+        "prefix": "cmd:abook",
+        "body": "abook ${1|-w nickname,-n,-c,-l,-h|}",
+        "description": [
+            "Opens the Address Book dialog window.",
+            "",
+            "The -w switch opens the whois tab.",
+            "The -n switch opens the notify tab.",
+            "The -c switch opens the control tab.",
+            "The -l switch opens the colors tab.",
+            "The -h switch opens the highlight tab.",
+            "",
+            "The nickname parameter is optional, can only be specified with the -w switch and can be used to open the address book to that specific user with the whois tab."
+        ]
+    },
+    "ajinvite": {
+        "prefix": "cmd:ajinvite",
+        "body": "ajinvite ${1|on,off|}",
+        "description": [
+            "Turns auto-join on invite on or off.",
+            "",
+            "Parameter is optional.",
+            "Without any parameters, mIRC will echo if the feature is on or off."
+        ]
+    },
+    "alias": {
+        "prefix": "cmd:alias",
+        "body": "alias ${1:filename} ${2:aliasname} ${3:command}",
+        "description": [
+            "Adds, removes, replaces aliases; it is limited to single line aliases and will not affect multiple line definitions.",
+            "",
+            "The filename parameter is an optional parameter that can be used to specify which aliases file to use, the file must be already loaded.",
+            "The aliasname parameter is the name of the alias to use.",
+            "The command parameter is an optional parameter.",
+            "",
+            "If you do not specify a filename, it defaults to using the first filename in which the alias exists, or if it does not exist then it uses the first loaded aliases file.",
+            "To remove an alias do not specify a command."
+        ]
+    },
+    "aline": {
+        "prefix": "cmd:aline",
+        "body": "aline ${1:-sahpinl} ${2:c} @${3:window} ${4:text}",
+        "description": [
+            "Adds a line to a list.",
+            "",
+            "The c parameter specifies a color number for the line.",
+            "",
+            "The -s switch selects the line that was just added and clears the current selections.",
+            "The -a switch selects a line without clearing the current selections.",
+            "The -h switch highlights the window's button if it is currently minimized.",
+            "The -p switch forces the line of text to be wrapped if it is too long to fit on one line.",
+            "The -iN switch indents the line by 2 spaces by default or N spaces if N is specified.",
+            "The -n switch prevents a line from being added if it exists.",
+            "The -l switch applies the command to the side listbox.",
+            "",
+            "If you are referencing a window which uses a side-listbox, you can specify the -l switch in the above commands to act on the side-listbox."
+        ]
+    },
+    "ame": {
+        "prefix": "cmd:ame",
+        "body": "ame ${1:message}",
+        "description": "Sends the specified action to all open channel windows."
+    },
+    "amsg": {
+        "prefix": "cmd:amsg",
+        "body": "amsg ${1:message}",
+        "description": "Sends the specified message to all open channel windows."
+    },
+    "anick": {
+        "prefix": "cmd:anick",
+        "body": "anick ${1:nickname}",
+        "description": "Changes your alternate nickname."
+    },
+    "aop": {
+        "prefix": "cmd:aop",
+        "body": "aop ${1:-rw} ${2|on,off,nick,address|} ${3:#channel1${4:,#channel2${5:,...}}} ${6:type} ${7:network}",
+        "description": [
+            "Used to add or remove users to your auto-op list.",
+            "",
+            "The -r switch indicates that the address is to be removed.",
+            "The -l switch displays the list of auto-op addresses that match the specified switches.",
+            "The -w switch makes the auto-op apply to any network.",
+            "",
+            "If you do not specify a type then only the users nickname is used. If you specify a type then the users address is looked up via the server."
+        ]
+    },
+    "auser": {
+        "prefix": "cmd:auser",
+        "body": "auser ${1:-a} ${2:levels} ${3:nick|address} ${4:info}",
+        "description": "This adds the specified nick/address exactly as it is given to the users list with the specified levels. If you specify [-a], then if the user already exists, the specified levels are added to the current levels the user has. Remember, if the first level is not preceded by an equal sign then it is a general access level."
+    },
+    "autojoin": {
+        "prefix": "cmd:autojoin",
+        "body": "autojoin ${1:-nsdN}",
+        "description": [
+            "Can be used in the on CONNECT event or Perform section to delay or prevent autojoining of channels",
+            "",
+            "-n = join now",
+            "-s = skip autojoin",
+            "-dN = delay autojoin for N seconds"
+        ]
+    },
+    "avoice": {
+        "prefix": "cmd:avoice",
+        "body": "aop ${1:-rw} ${2|on,off,nick,address|} ${3:#channel1${4:,#channel2${5:,...}}} ${6:type} ${7:network}",
+        "description": [
+            "Used to add or remove users to your auto-voice list.",
+            "",
+            "The -r switch indicates that the address is to be removed.",
+            "The -l switch displays the list of auto-voice addresses that match the specified switches.",
+            "The -w switch makes the auto-voice apply to any network.",
+            "",
+            "If you do not specify a type then only the users nickname is used. If you specify a type then the users address is looked up via the server."
+        ]
+    },
+    "away": {
+        "prefix": "cmd:away",
+        "body": "away ${1:message}",
+        "description": "Leaves a message indicating that you are currently not paying attention to IRC. When someone sends you a message, they will automatically see your away message. Using `away` with no message marks you as no longer being away and removes your previous message."
+    }
+}
