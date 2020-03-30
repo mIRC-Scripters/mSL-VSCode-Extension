@@ -54,6 +54,12 @@ to structure this file.
 
 ## [Unreleased]
 
+### [v0.3.0]
+
+#### Added
+
+- Commands snippets
+
 ### [v0.2.3] 3/26/2020
 
 #### Added
