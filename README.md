@@ -13,11 +13,15 @@ This is a Visual Studio Code extension that adds support for mIRC Scripting Lang
   - AdiIRC
 - Snippets
   - Alias constructors (constants, commands, identifiers, and command and identifier)
-  - Built-in commands
-  - Built-in identifiers
-  - Built-in events
+  - Built-in commands (WIP)
+  - Built-in identifiers (WIP)
+  - Built-in events (WIP)
   - Miscellaneous
 - Error reporting (WIP)
+
+## Contributing
+
+All contributions are welcome.
 
 ## Acknowledgements
 

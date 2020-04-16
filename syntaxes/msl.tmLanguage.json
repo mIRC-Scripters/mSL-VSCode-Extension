@@ -354,9 +354,12 @@
         },
         {
           "name": "meta.arithmetic.msl",
-          "begin": "(<=\\()",
-          "end": "(?<=\\))",
+          "begin": "\\(",
+          "end": "\\)",
           "patterns": [
+            {
+              "include": "#parameters"
+            },
             {
               "include": "#calc_content"
             }
@@ -678,9 +681,9 @@
           ]
         },
         {
-          "comment": "Matches events: keydown keyup",
+          "comment": "Matches events: keydown keyup char",
           "name": "meta.event.code.msl",
-          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:key(?:down|up):(?:\\*|@[^:]*):(?:\\*|\\d+(?:,\\d+)*):)\\s*",
+          "begin": "^(?i)(on\\x20+(?:me:)?[^:\\s]+:(?:key(?:down|up)|char):(?:\\*|@[^:]*):(?:\\*|\\d+(?:,\\d+)*):)\\s*",
           "beginCaptures": {
             "1": {
               "name": "entity.name.type.event.msl"
