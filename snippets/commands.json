@@ -40,7 +40,7 @@
     },
     "aline": {
         "prefix": "cmd:aline",
-        "body": "aline ${1:-sahpinl} ${2:c} @${3:window} ${4:text}",
+        "body": "aline ${1:-sahpiNnl} ${2:c} @${3:window} ${4:text}",
         "description": [
             "Adds a line to a list.",
             "",
@@ -94,11 +94,11 @@
         "prefix": "cmd:autojoin",
         "body": "autojoin ${1:-nsdN}",
         "description": [
-            "Can be used in the on CONNECT event or Perform section to delay or prevent autojoining of channels",
+            "Can be used in the on CONNECT event or perform section to delay or prevent autojoining of channels",
             "",
-            "-n = join now",
-            "-s = skip autojoin",
-            "-dN = delay autojoin for N seconds"
+            "The -n switch indicates to join now.",
+            "The -s switch indicates to skip autojoin.",
+            "The -dN switch indicates to delay autojoin for N seconds."
         ]
     },
     "avoice": {
@@ -122,7 +122,30 @@
     "background": {
         "prefix": "cmd:background",
         "body": "background ${1:-abemsgdluhcfnrtpx} ${2:window} ${3:filename}",
-        "description": "TODO"
+        "description": [
+            "Changes the background picture setting for a specific window including a channel window.",
+            "",
+            "The -e switch sets the specified background as default.",
+            "The -x switch indicates that there should be no background picture.",
+            "The -a switch indicates the active window should be the target.",
+            "The -m switch indicates that the main mIRC window should be the target.",
+            "The -s switch indicates that the status window should be the target.",
+            "The -g switch indicates that the finger window should be the target.",
+            "The -d switch indicates that the single message window should be the target.",
+            "The -c switch indicates that the image should be centered.",
+            "The -f switch indicates that the image should fill the window.",
+            "The -n switch indicates that the image should be normal.",
+            "The -r switch indicates that the image should be stretched.",
+            "The -t switch indicates that the image should be tiled.",
+            "The -p switch indicates that the image should be in photo mode.",
+            "The -l switch indicates that the toolbar should be the target.",
+            "The -u switch indicates that the toolbar buttons should be the target.",
+            "The -h switch indicates that the switchbar should be the target.",
+            "The -b switch indicates that the treebar should be the target.",
+            "",
+            "The window name should only be used if no window switches were specified.",
+            "The filename does not need to be specified if you are only changing the display method."
+        ]
     },
     "ban": {
         "prefix": "cmd:ban",
@@ -142,6 +165,196 @@
     "bindip": {
         "prefix": "cmd:bindip",
         "body": "bindip ${1:|on,off|} ${2:ipaddress}",
+        "description": "TODO"
+    },
+    "bread": {
+        "prefix": "cmd:bread",
+        "body": "bread ${1:-ta} ${2:filename} ${3:S} ${4:N} ${5:&binvar}",
+        "description": "TODO"
+    },
+    "break": {
+        "prefix": "cmd:break",
+        "body": "break",
+        "description": "TODO"
+    },
+    "breplace": {
+        "prefix": "cmd:breplace",
+        "body": "breplace ${1:&binvar} ${2:oldvalue} ${3:newvalue} ${4:oldvalue} ${5:newvalue...}",
+        "description": "TODO"
+    },
+    "bset": {
+        "prefix": "cmd:bset",
+        "body": "bset ${1:-tac} ${2:&binvar} ${3:N} ${4:asciivalue} ${5:asciivalue...}",
+        "description": "TODO"
+    },
+    "btrunc": {
+        "prefix": "cmd:btrunc",
+        "body": "btrunc ${1:filename} ${2:bytes}",
+        "description": "TODO"
+    },
+    "bunset": {
+        "prefix": "cmd:bunset",
+        "body": "bunset ${1:&binvar} ${2:&binvar}",
+        "description": "TODO"
+    },
+    "bwrite": {
+        "prefix": "cmd:bwrite",
+        "body": "bwrite ${1:-tac} ${2:filename} ${3:S} ${4:N} ${4:|text,%var,&binvar|}",
+        "description": "TODO"
+    },
+    "channel": {
+        "prefix": "cmd:channel",
+        "body": "channel ${1:#channel}",
+        "description": "TODO"
+    },
+    "clear": {
+        "prefix": "cmd:clear",
+        "body": "clear ${1:-sghlc} ${2:windowname}",
+        "description": "TODO"
+    },
+    "clearall": {
+        "prefix": "cmd:clearall",
+        "body": "clearall ${1:-snqmtgua}",
+        "description": "TODO"
+    },
+    "cline": {
+        "prefix": "cmd:cline",
+        "body": "cline  ${1:-hrml} ${2:c} @${3:window} ${4:N}",
+        "description": "TODO"
+    },
+    "clipboard": {
+        "prefix": "cmd:clipboard",
+        "body": "clipboard ${1:-an} ${2:text}",
+        "description": "TODO"
+    },
+    "close": {
+        "prefix": "cmd:close",
+        "body": "close ${1:-axicdfgklmnstu@} ${2:|nick,window|} ${3:|nick...,window...|}",
+        "description": "TODO"
+    },
+    "cnick": {
+        "prefix": "cmd:cnick",
+        "body": "cnick ${1:-rfaniovpylNmNsN} ${2:|on,off,nick!user@host|} ${3:color} ${4:modes} ${5:levels}",
+        "description": "TODO"
+    },
+    "color": {
+        "prefix": "cmd:color",
+        "body": "color ${1:-lrs} ${2:name} ${3:index}",
+        "description": "TODO"
+    },
+    "comclose": {
+        "prefix": "cmd:comclose",
+        "body": "comclose ${1:name}",
+        "description": "TODO"
+    },
+    "comlist": {
+        "prefix": "cmd:comlist",
+        "body": "comlist",
+        "description": "TODO"
+    },
+    "comopen": {
+        "prefix": "cmd:comopen",
+        "body": "comopen ${1:name} ${2:progid}",
+        "description": "TODO"
+    },
+    "comreg": {
+        "prefix": "cmd:comreg",
+        "body": "comreg ${1:-u} ${2:filename}",
+        "description": "TODO"
+    },
+    "continue": {
+        "prefix": "cmd:continue",
+        "body": "continue",
+        "description": "TODO"
+    },
+    "copy": {
+        "prefix": "cmd:copy",
+        "body": "copy ${1:-aof} ${2:filename} ${3:filename}",
+        "description": "TODO"
+    },
+    "creq": {
+        "prefix": "cmd:creq",
+        "body": "creq ${1:|+m,-m|} ${2:|ask,auto,ignore|}",
+        "description": "TODO"
+    },
+    "ctcpreply": {
+        "prefix": "cmd:ctcpreply",
+        "body": "ctcpreply ${1:nick} ${2:ctcp} ${3:message}",
+        "description": "TODO"
+    },
+    "ctcps": {
+        "prefix": "cmd:ctcps",
+        "body": "ctcps ${1:|on,off|}",
+        "description": "TODO"
+    },
+    "dcc:chat": {
+        "prefix": "cmd:dcc:chat",
+        "body": "dcc chat ${1:nick}",
+        "description": "TODO"
+    },
+    "dcc:fserve": {
+        "prefix": "cmd:dcc:fserve",
+        "body": "dcc fserve",
+        "description": "TODO"
+    },
+    "dcc:get": {
+        "prefix": "cmd:dcc:get",
+        "body": "dcc get ${1:folder}",
+        "description": "TODO"
+    },
+    "dcc:ignore": {
+        "prefix": "cmd:dcc:ignore",
+        "body": "dcc ignore ${1:|on,off,accept,ignore|}",
+        "description": "TODO"
+    },
+    "dcc:maxcps": {
+        "prefix": "cmd:dcc:maxcps",
+        "body": "dcc maxcps ${1:N}",
+        "description": "TODO"
+    },
+    "dcc:nick": {
+        "prefix": "cmd:dcc:nick",
+        "body": "dcc nick ${1:-sgcf} ${2:oldnick} ${3:newnick}",
+        "description": "TODO"
+    },
+    "dcc:passive": {
+        "prefix": "cmd:dcc:passive",
+        "body": "dcc passive ${1:|on,off|}",
+        "description": "TODO"
+    },
+    "dcc:reject": {
+        "prefix": "cmd:dcc:reject",
+        "body": "dcc reject",
+        "description": "TODO"
+    },
+    "dcc:send": {
+        "prefix": "cmd:dcc:send",
+        "body": "dcc send ${1:-clmn} ${2:nick} ${3:file1} ${4:file2...}",
+        "description": "TODO"
+    },
+    "dcc:trust": {
+        "prefix": "cmd:dcc:trust",
+        "body": "dcc trust ${1:-r} ${2:|on,off,nick,address,level|}${4::network}",
+        "description": "TODO"
+    },
+    "dccserve": {
+        "prefix": "cmd:dccserve",
+        "body": "dccserve ${1:|+scf,-scf|} ${2:|on,off} ${3:port}",
+        "description": "TODO"
+    },
+    "dde": {
+        "prefix": "cmd:dde",
+        "body": "dde ${1:-re} ${2:service} ${3:topic} ${4:item} ${5:data}",
+        "description": "TODO"
+    },
+    "ddeserver": {
+        "prefix": "cmd:ddeserver",
+        "body": "ddeserver ${1:|on service name,off|}",
+        "description": "TODO"
+    },
+    "debug": {
+        "prefix": "cmd:debug",
+        "body": "debug ${1:-cinptrNoN} ${2:N} ${3:|on,off,@window,filename} ${4:identifier}",
         "description": "TODO"
     }
 }
