@@ -356,5 +356,72 @@
         "prefix": "cmd:debug",
         "body": "debug ${1:-cinptrNoN} ${2:N} ${3:|on,off,@window,filename} ${4:identifier}",
         "description": "TODO"
+    },
+    "dec": {
+        "prefix": "cmd:dec ",
+        "body": "dec ${1:-cszeuN} ${2:%var} ${3:value}",
+        "description": "TODO"
+    },
+    "describe": {
+        "prefix": "cmd:describe",
+        "body": "describe ${1:|nick,channel|} ${2:message}",
+        "description": "TODO"
+    },
+    "dialog": {
+        "prefix": "cmd:dialog",
+        "body": "dialog ${1:-mdtsonkcvie} ${2:name} ${3:table} ${4:x y w h} ${5:text}",
+        "description": "TODO"
+    },
+    "did": {
+        "prefix": "cmd:did",
+        "body": "did ${1:-ftebvhnmcukradiogjsl} ${2:name} ${3:id} ${4:n} ${5:|text,filename|}",
+        "description": "TODO"
+    },
+    "didtok": {
+        "prefix": "cmd:didtok",
+        "body": "didtok ${1:name} ${2:id} ${3:C} ${4:text}",
+        "description": "TODO"
+    },
+    "disable": {
+        "prefix": "cmd:disable",
+        "body": "disable ${1:#group} ${2:#group...}",
+        "description": "TODO"
+    },
+    "disconnect": {
+        "prefix": "cmd:disconnect",
+        "body": "disconnect",
+        "description": "TODO"
+    },
+    "dlevel": {
+        "prefix": "cmd:dlevel",
+        "body": "dlevel ${1:level}",
+        "description": "TODO"
+    },
+    "dline": {
+        "prefix": "cmd:dline",
+        "body": "dline ${1:-hlt} ${2:@name} ${3:N${4:-N2}}",
+        "description": "TODO"
+    },
+    "dll": {
+        "prefix": "cmd:dll",
+        "body": "dll ${1:name.dll} ${2:procname} ${3:data}",
+        "description": "TODO"
+    },
+    "dns": {
+        "prefix": "cmd:dns",
+        "body": "dns ${1:-46ch} ${2:|nick,address|}",
+        "description": "TODO"
+    },
+    "dqwindow": {
+        "prefix": "cmd:dqwindow",
+        "body": "dqwindow ${1:|on,off,show,hide,min|}",
+        "description": "TODO"
+    },
+    "template": {
+        "": {
+            "prefix": "cmd:",
+            "body": "",
+            "description": "TODO"
+        }
     }
 }
