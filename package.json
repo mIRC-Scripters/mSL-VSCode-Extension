@@ -1,89 +1,97 @@
 {
-	"name": "msl",
-	"displayName": "mSL",
-	"description": "mIRC Scripting Language Support.",
-	"version": "0.3.0",
-	"preview": true,
-	"icon": "logo.png",
-	"publisher": "mirc-scripters",
-	"engines": {
-		"vscode": "^1.41.0"
-	},
-	"categories": [
-		"Programming Languages",
-		"Snippets",
-		"Linters"
-	],
-	"activationEvents": [
-		"*"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"configurationDefaults": {
-			"[msl]": {
-				"editor.autoIndent": "full",
-				"editor.tabSize": 2,
-				"editor.insertSpaces": true
-			}
-		},
-		"languages": [
-			{
-				"id": "msl",
-				"extensions": [
-					".mrc"
-				],
-				"aliases": [
-					"mIRC Scripting Language",
-					"mSL"
-				],
-				"configuration": "./language-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "msl",
-				"scopeName": "source.msl",
-				"path": "./syntaxes/msl.tmLanguage.json"
-			}
-		],
-		"snippets": [
-			{
-				"language": "msl",
-				"path": "./snippets/commands.json"
-			},
-			{
-				"language": "msl",
-				"path": "./snippets/tools.json"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "npm run compile",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.44.0",
-		"@types/glob": "^7.1.1",
-		"@types/mocha": "^7.0.2",
-		"@types/node": "^13.11.0",
-		"eslint": "^6.8.0",
-		"@typescript-eslint/parser": "^2.26.0",
-		"@typescript-eslint/eslint-plugin": "^2.26.0",
-		"glob": "^7.1.6",
-		"mocha": "^7.1.1",
-		"typescript": "^3.8.3",
-		"vscode-test": "^1.3.0"
-	},
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension.git"
-	},
-	"homepage": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension/blob/master/README.md"
+  "name": "msl",
+  "displayName": "mSL",
+  "description": "mIRC Scripting Language Support.",
+  "version": "0.3.0",
+  "preview": true,
+  "icon": "logo.png",
+  "publisher": "mirc-scripters",
+  "engines": {
+    "vscode": "^1.53.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters",
+    "Formatters"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "configurationDefaults": {
+      "[msl]": {
+        "editor.autoIndent": "full",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+      }
+    },
+    "languages": [
+      {
+        "id": "msl",
+        "extensions": [
+          ".mrc"
+        ],
+        "aliases": [
+          "mIRC Scripting Language",
+          "mSL"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "msl",
+        "scopeName": "source.msl",
+        "path": "./syntaxes/msl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "msl",
+        "path": "./snippets/commands.json"
+      },
+      {
+        "language": "msl",
+        "path": "./snippets/tools.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p ./",
+    "test-watch": "tsc -watch -p ./",
+    "pretest": "npm run test-compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.53.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "ts-loader": "^8.0.14",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0",
+    "webpack": "^5.19.0",
+    "webpack-cli": "^4.4.0"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension.git"
+  },
+  "homepage": "https://github.com/mIRC-Scripters/mSL-VSCode-Extension/blob/master/README.md"
 }
